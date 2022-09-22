@@ -40,7 +40,7 @@ const strat = new SamlStrategy(
 		disableRequestedAuthnContext: true
 	},
 	function (profile, done) {
-		findByEmail(profile.email, function (err, user) {
+		findByEmail(profile.email, (err, user) => {
 			if (err) {
 				return done(err);
 			}
@@ -50,10 +50,10 @@ const strat = new SamlStrategy(
 );
 passport.use(strat);
 
-passport.serializeUser(function (user, done) {
+passport.serializeUser((user, done) => {
 	done(null, user);
 });
-passport.deserializeUser(function (user, done) {
+passport.deserializeUser((user, done) => {
 	done(null, user);
 });
 
@@ -61,8 +61,7 @@ const redir = (req, res) => {
 	res.redirect('/');
 };
 const ensureAuthenticated = (req, res, next) => {
-	if (req.isAuthenticated()) return next();
-	else return res.redirect('/login');
+	return req.isAuthenticated() ? next() : res.redirect('/login');
 };
 
 app.get('/', (req, res) => {
@@ -74,13 +73,13 @@ app.get('/', (req, res) => {
 app.get('/login', passport.authenticate('saml', { failureRedirect: '/', failureFlash: true }), redir);
 app.post('/login/callback', passport.authenticate('saml', { failureRedirect: '/', failureFlash: true }), redir);
 
-app.get('/Shibboleth.sso/Metadata', function (req, res) {
+app.get('/Shibboleth.sso/Metadata', (req, res) => {
 	res.type('application/xml');
 	res
 		.status(200)
 		.send(strat.generateServiceProviderMetadata(fs.readFileSync(__dirname + '/src/cert/cert_idp.pem', 'utf8')));
 });
 
-app.listen(3000, function () {
+app.listen(3000, () => {
 	console.log('Server started at http://localhost:3000/');
 });
