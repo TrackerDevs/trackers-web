@@ -1,0 +1,26 @@
+
+# CS Tracker @ UIC Website Source
+
+### Requirements
+
+- Node.js >=v16
+
+### Install
+
+```cli
+npm i
+```
+
+### Run Server
+
+```cli
+npm start
+```
+
+### Run TailwindCSS
+
+```cli
+npx tailwindcss -i ./src/public/stylesheets/landing.css -o ./src/dist/output.css --watch
+```
+
+In-depth information on configuring Shibboleth IDP can be found [here](https://github.com/ritstudentgovernment/passport-saml-example).

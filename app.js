@@ -24,7 +24,7 @@ app.use(passport.session());
 const strat = new SamlStrategy(
 	{
 		// URL that goes from the Identity Provider -> Service Provider
-		callbackUrl: process.env.CALLBACK_URL,
+		callbackUrl: '/login/callback',
 		// URL that goes from the Service Provider -> Identity Provider
 		entryPoint: process.env.ENTRY_POINT,
 		// Usually specified as `/shibboleth` from site root
