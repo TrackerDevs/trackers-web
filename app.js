@@ -7,7 +7,7 @@ const SamlStrategy = require('passport-saml').Strategy;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/src/vue'));
 
 app.use(
 	require('express-session')({
@@ -33,19 +33,14 @@ const strat = new SamlStrategy(
 		// Service Provider private key
 		decryptionPvk: fs.readFileSync(__dirname + '/src/cert/key.pem', 'utf8'),
 		// Service Provider Certificate
-		privateCert: fs.readFileSync(__dirname + '/src/cert/key.pem', 'utf8'),
+		privateCert: fs.readFileSync(__dirname + '/src/cert/cert.pem', 'utf8'),
 		// Identity Provider's public key
-		cert: fs.readFileSync(__dirname + '/src/cert/cert.pem', 'utf8'),
+		cert: fs.readFileSync(__dirname + '/src/cert/cert_idp.pem', 'utf8'),
 		validateInResponseTo: false,
 		disableRequestedAuthnContext: true
 	},
 	function (profile, done) {
-		findByEmail(profile.email, (err, user) => {
-			if (err) {
-				return done(err);
-			}
-			return done(null, user);
-		});
+		return done(null, profile);
 	}
 );
 passport.use(strat);
@@ -60,13 +55,14 @@ passport.deserializeUser((user, done) => {
 const redir = (req, res) => {
 	res.redirect('/');
 };
+// eslint-disable-next-line no-unused-vars
 const ensureAuthenticated = (req, res, next) => {
 	return req.isAuthenticated() ? next() : res.redirect('/login');
 };
 
 app.get('/', (req, res) => {
-	res.sendFile('landing.html', {
-		root: 'src/components'
+	res.sendFile('index.html', {
+		root: 'src/vue'
 	});
 });
 
