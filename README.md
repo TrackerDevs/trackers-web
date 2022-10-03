@@ -43,4 +43,10 @@ npm run build
 npm run start
 ```
 
+### Run Lint
+
+```cli
+npm run lint
+```
+
 In-depth information on configuring Shibboleth IDP can be found [here](https://github.com/ritstudentgovernment/passport-saml-example/blob/master/README.md).
