@@ -7,7 +7,6 @@ import App from "./App";
 const routes = [ { path: "/", component: Landing }, { path: "/:pathMatch(.*)", component: NotFoundComponent } ];
 
 const router = createRouter({
-	mode: "history",
 	history: createWebHistory(),
 	routes
 });
