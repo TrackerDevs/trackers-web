@@ -1,24 +1,42 @@
 <template>
-  <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
-    <div class="px-6 w-full flex flex-wrap items-center justify-between">
-      <div class="navbar-collapse collapse grow items-center">
-        <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
-          <li class="nav-item">
-            <a
-              href="/"
-              class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-            >Home</a>
-          </li>
-        </ul>
+  <nav class="fixed w-full z-10 top-0 bg-gray-50">
+    <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center">
+      <div class="flex-shrink-0">
+        <img
+          class="h-8"
+          src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
+          alt="CS Trackers Logo"
+        >
+      </div>
+      <div class="flex space-x-4 lg:block lg:ml-8">
+        <a href="/">
+          Home
+        </a>
+        <a href="/events">
+          Events
+        </a>
+        <a href="/about">
+          About
+        </a>
+      </div>
+
+      <div class="flex space-x-4 ml-auto">
+        <a href="/login">
+          Log In
+        </a>
+        <a href="/signup">
+          Sign Up
+        </a>
       </div>
     </div>
+    <hr>
   </nav>
 </template>
     
 <script>
 export default {
-    name: "NavComponent",
-    props: []
+  name: "NavComponent",
+  props: []
 }
 </script>
 
