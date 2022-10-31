@@ -2,7 +2,7 @@
   <div class="w-full top-0">
     <hr>
     <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center align-center">
-      <div class="grid grid-cols-3 gap-4 m-auto text-center">
+      <div class="grid grid-cols-3 gap-4 w-full text-center">
         <div>
           <img
             class="h-8"
@@ -24,10 +24,10 @@
         <div class="text-left">
           Social
         </div>
-        <div class="text-left">
+        <div class="text-left text-xs">
           Copyright © 2022
         </div>
-        <div>
+        <div class="text-xs">
           Made with &#60;3 by CS Tracker Devs
         </div>
         <div>
