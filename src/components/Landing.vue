@@ -1,10 +1,10 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex flex-col my-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex flex-col min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="mt-32 mb-16 h-[75vh]">
         <img
-          class="h-16 ml-auto mr-auto"
+          class="h-16 mb-3 ml-auto mr-auto"
           src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
           alt="CS Trackers Logo"
         >

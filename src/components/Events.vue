@@ -1,7 +1,7 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex h-screen my-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       Events
     </div>
     <Footer />
