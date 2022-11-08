@@ -1,8 +1,6 @@
 <template>
   <nav class="fixed w-full z-10 top-0 bg-gray-50">
-    <div 
-      class="relative bg-blue-700 max-w-7xl mx-auto py-2 px-3 sm:px-6 lg:px-8 banner transition-all duration-300 ease-in-out"
-    >
+    <div class="relative bg-blue-700 py-2 banner transition-all duration-300 ease-in-out">
       <p class="font-medium font-bold text-white text-center text-sm">
         <span class="mr-2">Be apart of the community now!</span>
         <a

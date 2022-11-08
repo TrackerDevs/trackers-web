@@ -86,19 +86,19 @@
           <p class="text-gray-500 mb-6">
             Interact with the community more actively by joining or hosting events. These events can be meetups, study sessions, coding workshops, resume reviews, job search preps, and more!
           </p>
-          <p class="text-gray-500">
+          <p class="text-gray-500 mb-6">
             View upcoming events here or on the Discord server. Join our email list to receive updates about new events and times.
           </p>
           <a href="/events">
-            <button class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 mt-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex">
-              View Events
+            <button class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex">
+              <p>View Events</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6 ml-4"
+                class="w-6 h-6 ml-4 relative top-[0.05em]"
               >
                 <path
                   stroke-linecap="round"
