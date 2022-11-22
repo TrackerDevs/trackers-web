@@ -12,136 +12,22 @@
           CS Trackers
         </h1>
         <h1 class="text-center mb-3 text-2xl leading-none text-slate-900">
-          CS Trackers was created during the midst of the global pandemic back in 2020 to connect computer science students who couldn't do so in person. Years later, CS Trackers is still the most popular and active student forum for help with any class, support for future careers, and a place for friendships and connections to be formed.
+          CS Trackers was created during the midst of the global pandemic back in 2020 to connect computer science
+          students who couldn't do so in person. Years later, CS Trackers is still the most popular and active student
+          forum for help with any class, support for future careers, and a place for friendships and connections to be
+          formed.
         </h1>
         <div class="text-center mt-8 space-y-6">
           <a href="/signup">
             <button
               type="button"
               class="inline-block px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            >Sign up</button>
-          </a>
-        </div>
-      </div>
-      
-      <div class="mb-8">
-        <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900">
-          Everything you need to succeed
-        </h1>
-      </div>
-
-      <div class="flex flex-wrap flex-row-reverse mb-12">
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
-          <div
-            class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
-          >
-            <a href="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
-          <h3 class="text-2xl font-bold mb-4">
-            Active Discord Server
-          </h3>
-          <p class="text-gray-500 mb-6">
-            Join an active Discord server and interact with fellow peers. Pick the classes you are currently taking and discuss future classes with previous students. Interact with classmates for all of your courses, and keep track of when homework and projects are due. Collaborate with people for group projects or group study sessions. Ask questions on homework and projects, and compare your performance to others. Even get real time access to teacher assistants and school faculty!
-          </p>
-          <p class="text-gray-500">
-            There is more than just classes! Interact with fellow musicians, cooks, gamers, and gym goers. Discuss financial markets and companies. Use your skills to contribute to the Trackers community and join ongoing projects. Stay ahead career wise by getting questions answered about career fairs, internships and early career opportunities and jobs. Get behind the scenes advice and information from school Alumni working in industry.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap mb-12">
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
-          <div
-            class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
-          >
-            <a href="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
-          <h3 class="text-2xl font-bold mb-4">
-            In-person and Virtual Events
-          </h3>
-          <p class="text-gray-500 mb-6">
-            Interact with the community more actively by joining or hosting events. These events can be meetups, study sessions, coding workshops, resume reviews, job search preps, and more!
-          </p>
-          <p class="text-gray-500 mb-6">
-            View upcoming events here or on the Discord server. Join our email list to receive updates about new events and times.
-          </p>
-          <a href="/events">
-            <button class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex">
-              <p>View Events</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 ml-4 relative top-[0.05em]"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
+            >Sign
+              up</button>
           </a>
         </div>
       </div>
 
-      <div class="flex flex-wrap flex-row-reverse mb-12">
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
-          <div
-            class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
-          >
-            <a href="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
-          <h3 class="text-2xl font-bold mb-4">
-            Community Trackers
-          </h3>
-          <p class="text-gray-500 mb-6">
-            Active community members taking classes right along side you who keep everything in the class up to date and organized for you. Community Tracker Mods send announcements for new homework, incoming due dates, and grades being released. These community members also make sure every chat is open and welcoming to everyone and academic honesty is followed at all times. Never miss a homework assignment ever again!
-          </p>
-          <p class="text-gray-500">
-            A fully comprehensive and regularly updated list of all classes being taught, which professors are teaching each course, and the amount and names of all assigned tracker mods is included on this website. Apply to become a Community Tracker Mod today and help fellow classmates and yourself with course workloads and recommend this community to others!
-          </p>
-        </div>
-      </div>
-      
       <hr>
 
       <section class="mt-10 mb-32 text-gray-800 text-center">
@@ -165,7 +51,9 @@
                       d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z"
                       clip-rule="evenodd"
                     />
-                    <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
+                    <path
+                      d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z"
+                    />
                   </svg>
                 </div>
               </div>
@@ -193,7 +81,9 @@
                     fill="currentColor"
                     class="w-10 h-10 text-white"
                   >
-                    <path d="M16.881 4.346A23.112 23.112 0 018.25 6H7.5a5.25 5.25 0 00-.88 10.427 21.593 21.593 0 001.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.592.772-2.468a17.116 17.116 0 01-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0018 11.25c0-2.413-.393-4.735-1.119-6.904zM18.26 3.74a23.22 23.22 0 011.24 7.51 23.22 23.22 0 01-1.24 7.51c-.055.161-.111.322-.17.482a.75.75 0 101.409.516 24.555 24.555 0 001.415-6.43 2.992 2.992 0 00.836-2.078c0-.806-.319-1.54-.836-2.078a24.65 24.65 0 00-1.415-6.43.75.75 0 10-1.409.516c.059.16.116.321.17.483z" />
+                    <path
+                      d="M16.881 4.346A23.112 23.112 0 018.25 6H7.5a5.25 5.25 0 00-.88 10.427 21.593 21.593 0 001.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.592.772-2.468a17.116 17.116 0 01-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0018 11.25c0-2.413-.393-4.735-1.119-6.904zM18.26 3.74a23.22 23.22 0 011.24 7.51 23.22 23.22 0 01-1.24 7.51c-.055.161-.111.322-.17.482a.75.75 0 101.409.516 24.555 24.555 0 001.415-6.43 2.992 2.992 0 00.836-2.078c0-.806-.319-1.54-.836-2.078a24.65 24.65 0 00-1.415-6.43.75.75 0 10-1.409.516c.059.16.116.321.17.483z"
+                    />
                   </svg>
                 </div>
               </div>
@@ -205,7 +95,8 @@
                   Tracked Classes
                 </h5>
                 <p class="text-gray-500">
-                  All years of experience are supported whether you're first or second year or undergraduate or graduate!
+                  All years of experience are supported whether you're first or second year or undergraduate or
+                  graduate!
                 </p>
               </div>
             </div>
@@ -287,6 +178,78 @@
           </div>
         </div>
       </section>
+
+      <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
+        <div
+          class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] h-[16rem] invisible sm:visible"
+        >
+          <img
+            class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
+            src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
+          >
+        </div>
+
+        <div
+          class="flex flex-wrap bg-white w-[24rem] h-[16rem] sm:w-[32rem] divide-y"
+        >
+          <a
+            href="/events"
+            class="w-full"
+          >
+            <button
+              class="group relative h-[5.4rem] w-full overflow-hidden bg-white text-lg"
+              style="direction:rtl;"
+            >
+              <div
+                class="absolute inset-0 w-0 bg-blue-500 transition-all duration-[500ms] ease-out group-hover:w-full shadow-inner"
+                style="direction:ltr;"
+              />
+              <span
+                class="relative text-black group-hover:text-white"
+                style="direction:ltr;"
+              >Events</span>
+            </button>
+          </a>
+
+          <a
+            href="/about"
+            class="w-full"
+          >
+            <button
+              class="group relative h-[5.4rem] w-full overflow-hidden bg-white text-lg"
+              style="direction:rtl;"
+            >
+              <div
+                class="absolute inset-0 w-0 bg-blue-500 transition-all duration-[500ms] ease-out group-hover:w-full shadow-inner"
+                style="direction:ltr;"
+              />
+              <span
+                class="relative text-black group-hover:text-white"
+                style="direction:ltr;"
+              >About</span>
+            </button>
+          </a>
+
+          <a
+            href="/about/team"
+            class="w-full"
+          >
+            <button
+              class="group relative h-[5.3rem] w-full overflow-hidden bg-white text-lg"
+              style="direction:rtl;"
+            >
+              <div
+                class="absolute inset-0 w-0 bg-blue-500 transition-all duration-[500ms] ease-out group-hover:w-full shadow-inner"
+                style="direction:ltr;"
+              />
+              <span
+                class="relative text-black group-hover:text-white"
+                style="direction:ltr;"
+              >The Team</span>
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
     <Footer />
   </div>

@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Landing from "./components/Landing";
 import Login from "./components/Login";
 import About from "./components/About";
+import AboutTeam from "./components/AboutTeam";
 import Contact from "./components/Contact";
 import Events from "./components/Events";
 import Signup from "./components/Signup";
@@ -16,6 +17,7 @@ const routes = [
 	{ path: "/signup", component: Signup }, 
 
 	{ path: "/about", component: About }, 
+	{ path: "/about/team", component: AboutTeam }, 
 	{ path: "/contact", component: Contact }, 
 	{ path: "/support", component: Support }, 
 
