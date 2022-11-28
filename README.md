@@ -37,6 +37,30 @@ npx tailwindcss -i ./src/stylesheets/tailwind.css -o ./src/dist/output.css --wat
 npm run lint
 ```
 
+## Firebase API
+
+- Base API url: `https://us-central1-cs-trackers.cloudfunctions.net/api`
+
+- All commands must be ran in `api/functions/`
+
+### Deploy functions
+
+```cli
+npm run deploy
+```
+
+### Serve functions locally
+
+```cli
+npm run serve
+```
+
+### Run lint
+
+```cli
+npm run lint
+```
+
 ### Deprecated
 
 #### Setup
