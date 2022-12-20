@@ -43,6 +43,12 @@ npm run lint
 
 - All commands must be ran in `api/functions/`
 
+### Install
+
+```cli
+npm i
+```
+
 ### Deploy functions
 
 ```cli
