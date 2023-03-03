@@ -2,15 +2,15 @@
   <div class="mb-12 lg:mb-0 shadow-lg">
     <img
       class="rounded-lg shadow-lg my-6 mx-auto"
-      :src="image"
+      :src="image.stringValue"
       alt="avatar"
       style="width: 150px"
     >
     <h5 class="text-lg font-bold mb-4">
-      {{ name }}
+      {{ name.stringValue }}
     </h5>
     <p class="mb-6">
-      {{ position }}
+      {{ position.stringValue }}
     </p>
     <ul class="list-inside flex mx-auto justify-center mb-6">
       <a
@@ -60,32 +60,32 @@
       </a>
     </ul>
     <p class="mb-6">
-      {{ bio }}
+      {{ bio.stringValue }}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'TeamCardComponent',
-    props: {
-        name: {
-            type: String,
-            default: "Name"
-        },
-        position: {
-            type: String,
-            default: "Position"
-        },
-        bio: {
-            type: String,
-            default: "Bio"
-        },
-        image: {
-            type: String,
-            default: "https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Fdefault-pfp.png?alt=media"
-        }
+  name: 'TeamCardComponent',
+  props: {
+    name: {
+      type: Object,
+      default: () => ({ stringValue: "Name" })
+    },
+    position: {
+      type: Object,
+      default: () => ({ stringValue: "Position" })
+    },
+    bio: {
+      type: Object,
+      default: () => ({ stringValue: "Bio" })
+    },
+    image: {
+      type: Object,
+      default: () => ({ stringValue: "https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Fdefault-pfp.png?alt=media" })
     }
+  }
 }
 </script>
 

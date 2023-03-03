@@ -13,6 +13,9 @@ import Support from "./components/Support";
 import NotFoundComponent from "./components/404";
 import App from "./App";
 
+import axios from "axios";
+axios.defaults.baseURL = "https://us-central1-cs-trackers.cloudfunctions.net/api";
+
 const routes = [ 
 	{ path: "/", component: Landing }, 
 	{ path: "/login", component: Login }, 

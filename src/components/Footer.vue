@@ -24,27 +24,19 @@
               Useful links
             </h6>
             <div class="text-gray-500 hover:text-gray-800 mb-4">
-              <a
-                href="/events"
-              >Events</a>
+              <a href="/events">Events</a>
               <span class="text-gray-400 mx-4">
                 •
               </span>
-              <a
-                href="/about"
-              >About</a>
+              <a href="/about">About</a>
               <span class="text-gray-400 mx-4">
                 •
               </span>
-              <a
-                href="/contact"
-              >Contact</a>
+              <a href="/contact">Contact</a>
               <span class="text-gray-400 mx-4">
                 •
               </span>
-              <a
-                href="/support"
-              >Support</a>
+              <a href="/support">Support</a>
             </div>
           </div>
           <div class="">

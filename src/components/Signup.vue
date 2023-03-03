@@ -88,10 +88,11 @@
           </div>
         </div>
         <div class="flex flex-wrap content-center justify-center rounded-r-md w-[16rem] h-[36rem] invisible sm:visible">
-          <img
+          <span class="w-full h-full gradient" />
+          <!-- <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover rounded-r-md"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
-          >
+          > -->
         </div>
       </div>
     </div>
@@ -113,4 +114,8 @@ export default {
 
 <style>
 @import '../dist/output.css';
+.gradient {
+  background: rgb(0,19,34);
+  background: linear-gradient(34deg, rgba(0,19,34,1) 0%, rgba(40,20,35,1) 62%, rgba(245,31,29,1) 100%);
+}
 </style>
