@@ -7,7 +7,7 @@ exports.signUp = async (req, res) => {
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.confirmPassword,
-    handle: req.body.handle,
+    username: req.body.username,
   };
 
   const {errors, valid} = validateSignupData(newUser);
@@ -34,8 +34,8 @@ exports.signUp = async (req, res) => {
   data = await axios
       .post(`https://identitytoolkit.googleapis.com/v1/accounts:update?key=${config.apiKey}`, {
         idToken: token,
-        displayName: req.body.handle,
-        photoUrl: `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/${defaultImage}?alt=media`,
+        displayName: req.body.username,
+        photoUrl: `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/public%2F${defaultImage}?alt=media`,
       })
       .catch((err) => {
         return res.status(500).json({error: err.response.data.error.message});
@@ -52,6 +52,7 @@ exports.signUp = async (req, res) => {
               email: {stringValue: data.email},
               imageUrl: {stringValue: data.photoUrl},
               status: {stringValue: ""},
+              id: {stringValue: data.localId},
               //   servers: {arrayValue: {values: []}},
               // last login date? (below?)
             },
@@ -154,5 +155,5 @@ exports.getAuthenticatedUser = async (req, res) => {
   userData.credentials = doc.data.fields;
   userData.credentials.userId = req.user.userId;
   // TODO: retrieve other info for other collections (messages, notifs, etc)
-  return res.json({userData, token: req.idToken, refreshToken: req.refresh_token});
+  return res.json({userData});
 };

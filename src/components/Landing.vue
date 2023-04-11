@@ -1,7 +1,7 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex flex-col min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex flex-col min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="mt-32 mb-16 h-[75vh]">
         <img
           class="h-16 mb-3 ml-auto mr-auto"

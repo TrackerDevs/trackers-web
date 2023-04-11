@@ -1,7 +1,7 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex flex-col min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex flex-col min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="mb-8 mt-10">
         <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900">
           Everything you need to succeed

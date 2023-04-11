@@ -1,7 +1,7 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex flex-col min-h-screen pt-[104px] mb-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex flex-col min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <section class="mb-32 mt-10 text-gray-800">
         <h1 class="text-center mb-12 font-bold text-4xl leading-none text-slate-900">
           Meet the Team

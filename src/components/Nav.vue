@@ -2,7 +2,7 @@
   <nav class="fixed w-full z-10 top-0 bg-gray-50">
     <div class="relative bg-blue-700 py-2 banner transition-all duration-300 ease-in-out">
       <p class="font-bold text-white text-center text-sm">
-        <span class="mr-2">Be apart of the community now!</span>
+        <span class="mr-2">Be a part of the community now!</span>
         <a
           class="underline pl-2 inline-flex"
           href="#"
@@ -29,7 +29,7 @@
       <div class="flex-shrink-0">
         <a href="/">
           <img
-            class="h-8"
+            class="h-10"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
             alt="CS Trackers Logo"
           >
@@ -48,12 +48,59 @@
       </div>
 
       <div class="flex space-x-4 ml-auto">
-        <a href="/login">
-          Log In
-        </a>
-        <a href="/signup">
-          Sign Up
-        </a>
+        <div v-if="!userStore.authenticated && !userStore.loading">
+          <a href="/login">
+            Log In
+          </a>
+          <a href="/signup">
+            Sign Up
+          </a>
+        </div>
+        <div v-else-if="!userStore.loading">
+          <img
+            :src="`${userStore.user.credentials.imageUrl.stringValue}`"
+            class="w-10 rounded-lg hover:cursor-pointer"
+            :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
+            @click.prevent="show = !show"
+          >
+          
+          <!-- Dropdown menu -->
+          <div
+            v-show="show"
+            class="absolute right-8 mt-2 z-10 bg-white divide-y rounded-lg shadow w-44"
+          >
+            <div class="px-4 py-3 text-sm">
+              <div>{{ !userStore.loading ? userStore.user.credentials.username.stringValue : "" }}</div>
+            </div>
+            <ul
+              class="py-2 text-sm"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                >Dashboard</a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                >Settings</a>
+              </li>
+            </ul>
+            <div class="py-2">
+              <div
+                class="block px-4 py-2 text-sm hover:bg-gray-100 hover:cursor-pointer"
+                @click.prevent="logout"
+              >
+                Sign out
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else>
+          <div class="w-10" />
+        </div>
       </div>
     </div>
     <hr>
@@ -61,12 +108,18 @@
 </template>
     
 <script>
+import { useUserDataStore } from '../stores/userData';
 export default {
   name: "NavComponent",
+  setup() {
+    const userStore = useUserDataStore();
+    return { userStore };
+  },
   data() {
     return {
       hideBanner: 100,
-      bannerHeight: 'block'
+      bannerHeight: 'block',
+      show: false
     }
   },
   created() {
@@ -93,6 +146,9 @@ export default {
         }, 300);
       }
     },
+    logout() {
+      this.userStore.logoutUser(this.$router);
+    }
   },
 }
 </script>

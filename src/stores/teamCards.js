@@ -6,11 +6,6 @@ export const useTeamCardsStore = defineStore("teamCard", {
 		admins: [],
 		engineers: []
 	}),
-	getters: {
-		getTeamAdmins (state) {
-			return state.admins;
-		}
-	},
 	actions: {
 		async fetchTeam () {
 			const res = await axios.get("/team");
