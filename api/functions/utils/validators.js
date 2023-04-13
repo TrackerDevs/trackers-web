@@ -21,7 +21,7 @@ exports.validateSignupData = (data) => {
     errors.confirmPassword = "Passwords must be the same";
   }
   if (isEmpty(data.username)) {
-    errors.name = "Must not be empty";
+    errors.username = "Must not be empty";
   }
   return {errors, valid: Object.keys(errors).length === 0};
 };

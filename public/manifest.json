@@ -1,0 +1,15 @@
+{
+	"short_name": "CS Trackers",
+	"name": "CS Trackers",
+	"icons": [
+		{
+			"src": "logo.png",
+			"type": "image/png",
+			"sizes": "356x356"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#1d4ed8",
+	"background_color": "#ffffff"
+}

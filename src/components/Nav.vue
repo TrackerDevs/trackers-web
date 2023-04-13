@@ -49,7 +49,10 @@
 
       <div class="flex space-x-4 ml-auto">
         <div v-if="!userStore.authenticated && !userStore.loading">
-          <a href="/login">
+          <a
+            href="/login"
+            class="mr-2"
+          >
             Log In
           </a>
           <a href="/signup">
@@ -59,7 +62,7 @@
         <div v-else-if="!userStore.loading">
           <img
             :src="`${userStore.user.credentials.imageUrl.stringValue}`"
-            class="w-10 rounded-lg hover:cursor-pointer"
+            class="w-10 rounded-lg hover:cursor-pointer z-10 relative"
             :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
             @click.prevent="show = !show"
           >
@@ -97,6 +100,12 @@
               </div>
             </div>
           </div>
+          <button
+            v-show="show"
+            tabindex="-1"
+            class="fixed w-full h-full inset-0 opacity-0 cursor-default"
+            @click.prevent="show = false"
+          />
         </div>
         <div v-else>
           <div class="w-10" />

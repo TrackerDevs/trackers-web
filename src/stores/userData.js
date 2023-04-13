@@ -20,7 +20,7 @@ export const useUserDataStore = defineStore("userData", {
 				this.authenticated = true;
 				this.loading = false;
 			} catch (e) {
-				console.log(e);
+				console.log(e.response.data);
 				this.authenticated = false;
 			}
 		},
@@ -33,9 +33,9 @@ export const useUserDataStore = defineStore("userData", {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
 				await this.fetchUser();
 				uiStore.clearErrors();
-				router.push({ path:"/" });
+				router.push({ path: "/" });
 			} catch (e) {
-				console.log(e);
+				// console.log(e);
 				uiStore.setErrors(e.response.data);
 			}
 		},
@@ -48,9 +48,9 @@ export const useUserDataStore = defineStore("userData", {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
 				await this.fetchUser();
 				uiStore.clearErrors();
-				router.push({ path:"/" });
+				router.push({ path: "/" });
 			} catch (e) {
-				console.log(e);
+				// console.log(e);
 				uiStore.setErrors(e.response.data);
 			}
 		},

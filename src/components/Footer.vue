@@ -16,7 +16,7 @@
               Made with &#60;3 by CS Tracker Devs
             </div>
             <div class="mb-4">
-              © 2022 Trackers
+              © 2022-2023 Trackers
             </div>
           </div>
           <div class="">
