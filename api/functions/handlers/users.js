@@ -83,7 +83,7 @@ exports.login = async (req, res) => {
         returnSecureToken: true,
       })
       .catch((err) => {
-        return res.status(500).json({error: err.response.data.error.message});
+        return res.status(500).json({error: "Invalid user details"});
       });
 
   return res.status(200).json({refreshToken: data.data.refreshToken});
