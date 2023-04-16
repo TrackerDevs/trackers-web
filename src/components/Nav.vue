@@ -3,9 +3,9 @@
     <div class="relative bg-blue-700 py-2 banner transition-all duration-300 ease-in-out">
       <p class="font-bold text-white text-center text-sm">
         <span class="mr-2">Be a part of the community now!</span>
-        <a
+        <router-link
+          to="#"
           class="underline pl-2 inline-flex"
-          href="#"
         >
           Join Discord Server
           <svg
@@ -22,47 +22,50 @@
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
             />
           </svg>
-        </a>
+        </router-link>
       </p>
     </div>
     <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center">
       <div class="flex-shrink-0">
-        <a href="/">
+        <router-link to="/">
           <img
             class="h-10"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
             alt="CS Trackers Logo"
           >
-        </a>
+        </router-link>
       </div>
       <div class="flex space-x-4 lg:block lg:ml-8">
-        <a href="/">
+        <router-link to="/">
           Home
-        </a>
-        <a href="/events">
+        </router-link>
+        <router-link to="/events">
           Events
-        </a>
-        <a href="/about">
+        </router-link>
+        <router-link to="/about">
           About
-        </a>
+        </router-link>
       </div>
 
       <div class="flex space-x-4 ml-auto">
         <div v-if="!userStore.authenticated && !userStore.loading">
-          <a
-            href="/login"
+          <router-link
+            to="/login"
             class="mr-2"
           >
             Log In
-          </a>
-          <a href="/signup">
+          </router-link>
+          <router-link to="/signup">
             Sign Up
-          </a>
+          </router-link>
         </div>
-        <div v-else-if="!userStore.loading">
+        <div
+          v-else-if="!userStore.loading"
+          class="w-10 relative"
+        >
           <img
             :src="`${userStore.user.credentials.imageUrl.stringValue}`"
-            class="w-10 rounded-lg hover:cursor-pointer z-10 relative"
+            class="w-10 rounded-lg cursor-pointer z-10 relative"
             :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
             @click.prevent="show = !show"
           >
@@ -70,30 +73,34 @@
           <!-- Dropdown menu -->
           <div
             v-show="show"
-            class="absolute right-8 mt-2 z-10 bg-white divide-y rounded-lg shadow w-44"
+            class="absolute right-0 top-12 z-10 bg-white divide-y rounded-lg shadow w-44"
           >
             <div class="px-4 py-3 text-sm">
-              <div>{{ !userStore.loading ? userStore.user.credentials.username.stringValue : "" }}</div>
+              <div>{{ userStore.user.credentials.username.stringValue }}</div>
             </div>
             <ul
               class="py-2 text-sm"
             >
               <li>
-                <a
-                  href="#"
+                <router-link
+                  to="#"
                   class="block px-4 py-2 hover:bg-gray-100"
-                >Dashboard</a>
+                >
+                  Dashboard
+                </router-link>
               </li>
               <li>
-                <a
-                  href="#"
+                <router-link
+                  to="#"
                   class="block px-4 py-2 hover:bg-gray-100"
-                >Settings</a>
+                >
+                  Settings
+                </router-link>
               </li>
             </ul>
             <div class="py-2">
               <div
-                class="block px-4 py-2 text-sm hover:bg-gray-100 hover:cursor-pointer"
+                class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
                 @click.prevent="logout"
               >
                 Sign out

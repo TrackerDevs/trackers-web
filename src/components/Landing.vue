@@ -18,13 +18,15 @@
           formed.
         </h1>
         <div class="text-center mt-8 space-y-6">
-          <a href="/signup">
+          <router-link to="/signup">
             <button
               type="button"
               class="inline-block px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            >Sign
-              up</button>
-          </a>
+            >
+              Sign
+              up
+            </button>
+          </router-link>
         </div>
       </div>
 
@@ -192,8 +194,8 @@
         <div
           class="flex flex-wrap bg-white w-[24rem] h-[16rem] sm:w-[32rem] divide-y"
         >
-          <a
-            href="/events"
+          <router-link
+            to="/events"
             class="w-full"
           >
             <button
@@ -209,10 +211,10 @@
                 style="direction:ltr;"
               >Events</span>
             </button>
-          </a>
+          </router-link>
 
-          <a
-            href="/about"
+          <router-link
+            to="/about"
             class="w-full"
           >
             <button
@@ -228,10 +230,10 @@
                 style="direction:ltr;"
               >About</span>
             </button>
-          </a>
+          </router-link>
 
-          <a
-            href="/about/team"
+          <router-link
+            to="/about/team"
             class="w-full"
           >
             <button
@@ -247,7 +249,7 @@
                 style="direction:ltr;"
               >The Team</span>
             </button>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

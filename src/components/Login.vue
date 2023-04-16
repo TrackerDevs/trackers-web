@@ -54,10 +54,12 @@
                   for="remember"
                 >Remember me</label>
 
-                <a
-                  href="#"
+                <router-link
+                  to="#"
                   class="font-semibold text-blue-700"
-                >Forgot password?</a>
+                >
+                  Forgot password?
+                </router-link>
               </div>
 
               <div class="mb-3">
@@ -88,7 +90,10 @@
                   </p>
                 </div>
 
-                <a :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`">
+                <router-link
+                  to="#!"
+                  :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
+                >
                   <img
                     class="w-5 h-5 mr-2"
                     src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
@@ -106,16 +111,18 @@
                       >Loading...</span>
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
             </form>
 
             <div class="text-center">
               <span class="text-xs text-gray-400 font-semibold">Don't have an account?</span>
-              <a
-                href="/signup"
+              <router-link
+                to="/signup"
                 class="text-xs font-semibold text-blue-700 p-1"
-              >Sign up</a>
+              >
+                Sign up
+              </router-link>
             </div>
           </div>
         </div>

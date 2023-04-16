@@ -11,7 +11,7 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -21,7 +21,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -48,7 +48,7 @@
       <div class="flex flex-wrap mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -58,7 +58,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
@@ -73,7 +73,7 @@
             View upcoming events here or on the Discord server. Join our email list to receive updates about new events
             and times.
           </p>
-          <a href="/events">
+          <router-link to="/events">
             <button
               class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex"
             >
@@ -93,14 +93,14 @@
                 />
               </svg>
             </button>
-          </a>
+          </router-link>
         </div>
       </div>
 
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -110,7 +110,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -143,7 +143,7 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -153,7 +153,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -180,7 +180,7 @@
       <div class="flex flex-wrap mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -190,7 +190,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
@@ -211,7 +211,7 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <a href="#!">
+            <router-link to="#!">
               <img
                 src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
                 class="w-full"
@@ -221,7 +221,7 @@
                 class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
                 style="background-color: rgba(251, 251, 251, 0.2)"
               />
-            </a>
+            </router-link>
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -246,8 +246,8 @@
       <hr>
 
       <div class="flex mt-10 shadow w-full max-w-4xl mx-auto">
-        <a
-          href="/about/team"
+        <router-link
+          to="/about/team"
           class="w-full"
         >
           <button class="flex flex-row items-center justify-center group relative h-20 w-full bg-white text-lg">
@@ -268,7 +268,7 @@
               />
             </svg>
           </button>
-        </a>
+        </router-link>
       </div>
     </div>
     <Footer />

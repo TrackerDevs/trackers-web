@@ -585,8 +585,8 @@ video {
   top: 0.05em;
 }
 
-.right-8 {
-  right: 2rem;
+.top-12 {
+  top: 3rem;
 }
 
 .z-10 {
@@ -720,10 +720,6 @@ video {
 
 .mb-0 {
   margin-bottom: 0px;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .block {

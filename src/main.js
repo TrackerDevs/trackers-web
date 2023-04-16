@@ -60,7 +60,7 @@ const routes = [
 ];
 
 const router = createRouter({
-	history: createWebHistory("/trackers-web"),
+	history: createWebHistory("/trackers-web/"),
 	routes
 });
 

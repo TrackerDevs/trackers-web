@@ -93,7 +93,8 @@
                   </p>
                 </div>
 
-                <a
+                <router-link
+                  to="#"
                   :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
                 >
                   <img
@@ -113,16 +114,18 @@
                       >Loading...</span>
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
             </form>
 
             <div class="text-center">
               <span class="text-xs text-gray-400 font-semibold">Already have an account?</span>
-              <a
-                href="/login"
+              <router-link
+                to="/login"
                 class="text-xs font-semibold text-blue-700 p-1"
-              >Login</a>
+              >
+                Login
+              </router-link>
             </div>
           </div>
         </div>
