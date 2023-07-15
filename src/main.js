@@ -32,8 +32,7 @@ const token = localStorage.RefreshToken;
 if (token) {
 	axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 	const store = useUserDataStore();
-	if (!store.user.credentials)
-		store.fetchUser();
+	store.fetchUser();
 }
 
 const routes = [
@@ -60,7 +59,7 @@ const routes = [
 ];
 
 const router = createRouter({
-	history: createWebHistory("/trackers-web/"),
+	history: createWebHistory("/trackers-web"),
 	routes
 });
 

@@ -69,7 +69,7 @@
             :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
             @click.prevent="show = !show"
           >
-          
+
           <!-- Dropdown menu -->
           <div
             v-show="show"
@@ -78,9 +78,7 @@
             <div class="px-4 py-3 text-sm">
               <div>{{ userStore.user.credentials.username.stringValue }}</div>
             </div>
-            <ul
-              class="py-2 text-sm"
-            >
+            <ul class="py-2 text-sm">
               <li>
                 <router-link
                   to="#"
@@ -127,14 +125,20 @@
 import { useUserDataStore } from '../stores/userData';
 export default {
   name: "NavComponent",
+  props: {
+    useBanner: {
+      type: Boolean,
+      default: true
+    }
+  },
   setup() {
     const userStore = useUserDataStore();
     return { userStore };
   },
   data() {
     return {
-      hideBanner: 100,
-      bannerHeight: 'block',
+      hideBanner: this.useBanner ? 100 : 0,
+      bannerHeight: this.useBanner ? 'block' : 'none',
       show: false
     }
   },
@@ -146,20 +150,22 @@ export default {
   },
   methods: {
     onScroll() {
-      if (window.scrollY === 0) {
-        this.bannerHeight = 'block';
-        setTimeout(() => {
-          if (window.scrollY === 0) {
-            this.hideBanner = 100;
-          }
-        }, 50);
-      } else {
-        this.hideBanner = 0;
-        setTimeout(() => {
-          if (window.scrollY !== 0) {
-            this.bannerHeight = 'none';
-          }
-        }, 300);
+      if (this.useBanner) {
+        if (window.scrollY === 0) {
+          this.bannerHeight = 'block';
+          setTimeout(() => {
+            if (window.scrollY === 0) {
+              this.hideBanner = 100;
+            }
+          }, 50);
+        } else {
+          this.hideBanner = 0;
+          setTimeout(() => {
+            if (window.scrollY !== 0) {
+              this.bannerHeight = 'none';
+            }
+          }, 300);
+        }
       }
     },
     logout() {
@@ -171,6 +177,7 @@ export default {
 
 <style>
 @import '../dist/output.css';
+
 .banner {
   opacity: v-bind(hideBanner);
   display: v-bind(bannerHeight);
