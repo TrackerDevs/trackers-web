@@ -4,13 +4,54 @@
     <Nav :use-banner="false" />
     <div class="flex pt-[72px]">
       <div class="flex flex-col w-full h-[calc(100vh-72px)]">
-        <div class="flex w-full border-b p-4">
-          MAIN
+        <div class="flex flex-row w-full items-center border-b p-4">
+          <p class="text-gray-800 font-bold text-xl w-[19rem]">
+            {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
+          </p>
+          <div class="mr-auto ml-2 relative">
+            <form>
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  class="w-4 h-4 text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                id="default-search"
+                type="search"
+                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
+                placeholder="Search"
+                required
+              >
+            </form>
+          </div>
+          <div>
+            <button :class="`bg-gray-100 hover:bg-red-100 text-gray-600 font-bold rounded py-1 px-4 mx-2`">
+              Day
+            </button>
+            <button :class="`bg-gray-100 hover:bg-red-100 text-gray-600 font-bold rounded py-1 px-4 mx-2`">
+              Week
+            </button>
+            <button :class="`bg-red-50 hover:bg-red-100 text-red-500 font-bold rounded py-1 px-4 mx-2`">
+              Month
+            </button>
+          </div>
         </div>
         <div class="flex flex-row w-full h-full border-l">
           <div class="flex flex-col w-2/5 h-full border-r border-b">
             <div class="flex flex-row items-center justify-between py-2 px-6">
-              <p class="mr-auto font-bold">
+              <p class="text-gray-800 mr-auto font-bold">
                 {{ MONTH_NAMES[controllerMonth] }} {{ controllerYear }}
               </p>
               <div
@@ -19,7 +60,7 @@
               >
                 <button
                   type="button"
-                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 items-center"
+                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 p-1 items-center"
                   @click="controllerUpdate(controllerMonth - 1)"
                 >
                   <svg
@@ -39,7 +80,7 @@
                 <div class="border-r inline-flex h-6" />
                 <button
                   type="button"
-                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-gray-200 p-1"
+                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-red-100 p-1"
                   @click="controllerUpdate(controllerMonth + 1)"
                 >
                   <svg
@@ -61,12 +102,12 @@
             <div class="flex flex-col mx-auto w-[80%] h-50">
               <div class="grid grid-cols-7">
                 <template
-                  v-for="day in DAYS"
-                  :key="day"
+                  v-for="_dayName in DAYS"
+                  :key="_dayName"
                 >
                   <div class="py-2 text-gray-600 text-sm tracking-wide font-bold justify-center text-center">
                     <p>
-                      {{ day }}
+                      {{ _dayName }}
                     </p>
                   </div>
                 </template>
@@ -84,7 +125,7 @@
                 >
                   <div
                     :class="`group text-center items-center justify-center cursor-pointer`"
-                    @click="month = controllerMonth; year = controllerYear; update()"
+                    @click="month = controllerMonth; year = controllerYear; day = dayNum; update()"
                   >
                     <!-- TODO: Fix transition -->
                     <p
@@ -130,9 +171,12 @@ export default {
     return {
       MONTH_NAMES: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       DAYS: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      DAYS_FULL: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       today: new Date(),
       month: 0,
       year: 0,
+      day: 0,
+      dayName: "",
       datepickerValue: new Date(),
       startPadding: [],
       daysInMonth: [],
@@ -147,6 +191,7 @@ export default {
   },
   mounted() {
     const today = new Date();
+    const day = today.getDate();
     const month = today.getMonth();
     const year = today.getFullYear();
     const datepickerValue = new Date(year, month, today.getDate()).toDateString();
@@ -172,6 +217,8 @@ export default {
     this.today = today;
     this.month = month;
     this.year = year;
+    this.day = day;
+    this.dayName = this.today.getDay();
     this.datepickerValue = datepickerValue;
     this.startPadding = startPadding;
     this.daysInMonth = daysInMonth;
@@ -223,6 +270,7 @@ export default {
       this.controllerEndPadding = endPadding;
     },
     update() {
+      this.dayName = new Date(this.year, this.month, this.day).getDay();
       let month = this.month;
       let year = this.year;
 
