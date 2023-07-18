@@ -82,9 +82,13 @@
                   v-for="dayNum in controllerDaysInMonth"
                   :key="dayNum"
                 >
-                  <div :class="`group text-center items-center justify-center cursor-pointer`">
+                  <div
+                    :class="`group text-center items-center justify-center cursor-pointer`"
+                    @click="month = controllerMonth; year = controllerYear; update()"
+                  >
+                    <!-- TODO: Fix transition -->
                     <p
-                      class="m-auto w-6 h-6 text-gray-700 transition ease-in-out duration-100 group-hover:bg-blue-200 rounded-full"
+                      :class="`m-auto w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'}`"
                     >
                       {{ dayNum }}
                     </p>
@@ -103,6 +107,9 @@
             :start-padding="startPadding"
             :days-in-month="daysInMonth"
             :end-padding="endPadding"
+            :today="today"
+            :month="month"
+            :year="year"
           />
         </div>
       </div>
@@ -123,10 +130,10 @@ export default {
     return {
       MONTH_NAMES: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       DAYS: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      today: 0,
+      today: new Date(),
       month: 0,
       year: 0,
-      datepickerValue: 0,
+      datepickerValue: new Date(),
       startPadding: [],
       daysInMonth: [],
       endPadding: [],
@@ -176,9 +183,12 @@ export default {
     this.controllerDaysInMonth = daysInMonth;
     this.controllerEndPadding = endPadding;
 
-    return { };
+    return {};
   },
   methods: {
+    controllerIsToday(date) {
+      return new Date(this.controllerYear, this.controllerMonth, date).toDateString() == this.today.toDateString();
+    },
     controllerUpdate(newMonth) {
       if (newMonth > 11)
         this.controllerYear++;
@@ -189,7 +199,7 @@ export default {
       this.controllerMonth = newMonth % 12;
       let month = this.controllerMonth;
       let year = this.controllerYear;
-      
+
       let dayOfWeek = new Date(year, month).getDay();
       let startPadding = [];
       for (var i = 1; i <= dayOfWeek; i++) {
@@ -211,6 +221,32 @@ export default {
       this.controllerStartPadding = startPadding;
       this.controllerDaysInMonth = daysInMonth;
       this.controllerEndPadding = endPadding;
+    },
+    update() {
+      let month = this.month;
+      let year = this.year;
+
+      let dayOfWeek = new Date(year, month).getDay();
+      let startPadding = [];
+      for (var i = 1; i <= dayOfWeek; i++) {
+        startPadding.push(i);
+      }
+
+      let numDaysInMonth = new Date(year, month + 1, 0).getDate();
+      let daysInMonth = [];
+      for (i = 1; i <= numDaysInMonth; i++) {
+        daysInMonth.push(i);
+      }
+
+      dayOfWeek = new Date(year, month + 1).getDay();
+      let endPadding = [];
+      for (i = 1; i <= 7 - dayOfWeek; i++) {
+        endPadding.push(i);
+      }
+
+      this.startPadding = startPadding;
+      this.daysInMonth = daysInMonth;
+      this.endPadding = endPadding;
     }
   }
 }

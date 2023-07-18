@@ -36,7 +36,7 @@
           :class="`border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200`"
         >
           <div
-            :class="`inline-flex w-6 h-6 items-center justify-center cursor-pointer text-center leading-none text-gray-700`"
+            :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
           >
             {{ dayNum }}
           </div>
@@ -74,6 +74,23 @@ export default {
         type: Array,
         default: () => []
     },
+    today: {
+      type: Date,
+      default: new Date()
+    },
+    year: {
+      type: Number,
+      default: 0
+    },
+    month: {
+      type: Number,
+      default: 0
+    }
+  },
+  methods: {
+    isToday(date) {
+      return new Date(this.year, this.month, date).toDateString() == this.today.toDateString();
+    }
   }
 }
 </script>
