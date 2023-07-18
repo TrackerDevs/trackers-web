@@ -21,15 +21,15 @@
       class="grid grid-cols-7 grid-rows-6 w-full h-full"
     >
       <template
-        v-for="blankday in blankdays"
-        :key="blankday"
+        v-for="padding in startPadding"
+        :key="padding"
       >
         <div
           class="text-center border-r border-b border-gray-300 bg-gray-200"
         />
       </template>
       <template
-        v-for="dayNum in noOfDays"
+        v-for="dayNum in daysInMonth"
         :key="dayNum"
       >
         <div
@@ -43,8 +43,8 @@
         </div>
       </template>
       <template
-        v-for="blankday in endBlankdays"
-        :key="blankday"
+        v-for="padding in endPadding"
+        :key="padding"
       >
         <div
           class="text-center border-r border-b border-gray-300 bg-gray-200"
@@ -62,15 +62,15 @@ export default {
         type: Array,
         default: () => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     },
-    blankdays: {
+    startPadding: {
         type: Array,
         default: () => []
     },
-    noOfDays: {
+    daysInMonth: {
         type: Array,
         default: () => []
     },
-    endBlankdays: {
+    endPadding: {
         type: Array,
         default: () => []
     },
