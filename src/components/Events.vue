@@ -4,63 +4,71 @@
     <Nav :use-banner="false" />
     <div class="flex pt-[72px]">
       <div class="flex flex-col w-full h-[calc(100vh-72px)]">
-        <div class="flex flex-row w-full items-center border-b p-4">
-          <p class="text-gray-800 font-bold text-xl w-[19rem]">
-            {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
-          </p>
-          <div class="mr-auto ml-2 relative">
-            <form>
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg
-                  class="w-4 h-4 text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
+        <div class="border-b py-4">
+          <div class="flex flex-row w-[85%] items-center mx-auto">
+            <p class="text-gray-800 font-bold text-xl lg:w-[19rem] md:w-32">
+              {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
+            </p>
+            <div class="mr-auto ml-2 relative">
+              <form>
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg
+                    class="w-4 h-4 text-gray-500"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  id="default-search"
+                  type="search"
+                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
+                  placeholder="Search"
+                  required
                 >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                id="default-search"
-                type="search"
-                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
-                placeholder="Search"
-                required
+              </form>
+            </div>
+            <div>
+              <button
+                :class="`${type === 2 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                @click="type = 2"
               >
-            </form>
-          </div>
-          <div>
-            <button :class="`bg-gray-100 hover:bg-red-100 text-gray-600 font-bold rounded py-1 px-4 mx-2`">
-              Day
-            </button>
-            <button :class="`bg-gray-100 hover:bg-red-100 text-gray-600 font-bold rounded py-1 px-4 mx-2`">
-              Week
-            </button>
-            <button :class="`bg-red-50 hover:bg-red-100 text-red-500 font-bold rounded py-1 px-4 mx-2`">
-              Month
-            </button>
+                Day
+              </button>
+              <button
+                :class="`${type === 1 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                @click="type = 1"
+              >
+                Week
+              </button>
+              <button
+                :class="`${type === 0 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                @click="type = 0"
+              >
+                Month
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex flex-row w-full h-full border-l">
           <div class="flex flex-col w-2/5 h-full border-r border-b">
-            <div class="flex flex-row items-center justify-between py-2 px-6">
+            <div class="flex flex-row items-center justify-between py-2 w-[80%] mx-auto">
               <p class="text-gray-800 mr-auto font-bold">
                 {{ MONTH_NAMES[controllerMonth] }} {{ controllerYear }}
               </p>
-              <div
-                class="border rounded-lg px-1"
-                style="padding-top: 2px;"
-              >
+              <div class="rounded-lg pt-[2px]">
                 <button
                   type="button"
-                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 p-1 items-center"
+                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 items-center p-1"
                   @click="controllerUpdate(controllerMonth - 1)"
                 >
                   <svg
@@ -77,7 +85,6 @@
                     />
                   </svg>
                 </button>
-                <div class="border-r inline-flex h-6" />
                 <button
                   type="button"
                   class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-red-100 p-1"
@@ -106,9 +113,7 @@
                   :key="_dayName"
                 >
                   <div class="py-2 text-gray-600 text-sm tracking-wide font-bold justify-center text-center">
-                    <p>
-                      {{ _dayName }}
-                    </p>
+                    {{ _dayName }}
                   </div>
                 </template>
               </div>
@@ -129,7 +134,7 @@
                   >
                     <!-- TODO: Fix transition -->
                     <p
-                      :class="`m-auto w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'}`"
+                      :class="`inline-flex items-center justify-center text-center w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'} ${controllerIsSelected(dayNum) ? 'border border-blue-500' : ''}`"
                     >
                       {{ dayNum }}
                     </p>
@@ -145,12 +150,33 @@
             </div>
           </div>
           <Month
+            v-if="type === 0"
             :start-padding="startPadding"
             :days-in-month="daysInMonth"
             :end-padding="endPadding"
             :today="today"
             :month="month"
             :year="year"
+            :day="day"
+          />
+          <Week
+            v-if="type === 1"
+            :start-padding="weekStartPadding"
+            :days-in-week="weekDaysInWeek"
+            :end-padding="weekEndPadding"
+            :today="today"
+            :month="month"
+            :year="year"
+            :day="day"
+          />
+          <Day
+            v-if="type === 2"
+            :days-in-week="[daysInMonth[day - 1]]"
+            :today="today"
+            :month="month"
+            :year="year"
+            :day="day"
+            :days="[DAYS_FULL[dayName]]"
           />
         </div>
       </div>
@@ -161,17 +187,22 @@
 <script>
 import Nav from './Nav';
 import Month from "./Events/Month.vue";
+import Week from "./Events/Week.vue";
+import Day from "./Events/Day.vue";
 export default {
   name: 'EventsComponent',
   components: {
     Nav,
-    Month
+    Month,
+    Week,
+    Day
   },
   data() {
     return {
       MONTH_NAMES: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       DAYS: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       DAYS_FULL: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      type: 0,
       today: new Date(),
       month: 0,
       year: 0,
@@ -181,6 +212,9 @@ export default {
       startPadding: [],
       daysInMonth: [],
       endPadding: [],
+      weekStartPadding: [],
+      weekDaysInWeek: [],
+      weekEndPadding: [],
 
       controllerMonth: 0,
       controllerYear: 0,
@@ -190,51 +224,25 @@ export default {
     }
   },
   mounted() {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.getMonth();
-    const year = today.getFullYear();
-    const datepickerValue = new Date(year, month, today.getDate()).toDateString();
-
-    let dayOfWeek = new Date(year, month).getDay();
-    let startPadding = [];
-    for (var i = 1; i <= dayOfWeek; i++) {
-      startPadding.push(i);
-    }
-
-    let numDaysInMonth = new Date(year, month + 1, 0).getDate();
-    let daysInMonth = [];
-    for (i = 1; i <= numDaysInMonth; i++) {
-      daysInMonth.push(i);
-    }
-
-    dayOfWeek = new Date(year, month + 1).getDay();
-    let endPadding = [];
-    for (i = 1; i <= 7 - dayOfWeek; i++) {
-      endPadding.push(i);
-    }
-
-    this.today = today;
-    this.month = month;
-    this.year = year;
-    this.day = day;
+    this.today = new Date();
+    this.day = this.today.getDate();
     this.dayName = this.today.getDay();
-    this.datepickerValue = datepickerValue;
-    this.startPadding = startPadding;
-    this.daysInMonth = daysInMonth;
-    this.endPadding = endPadding;
+    this.month = this.today.getMonth();
+    this.year = this.today.getFullYear();
+    this.controllerMonth = this.month;
+    this.controllerYear = this.year;
 
-    this.controllerMonth = month;
-    this.controllerYear = year;
-    this.controllerStartPadding = startPadding;
-    this.controllerDaysInMonth = daysInMonth;
-    this.controllerEndPadding = endPadding;
+    this.update();
+    this.controllerUpdate(this.controllerMonth);
 
     return {};
   },
   methods: {
     controllerIsToday(date) {
       return new Date(this.controllerYear, this.controllerMonth, date).toDateString() == this.today.toDateString();
+    },
+    controllerIsSelected(date) {
+      return new Date(this.controllerYear, this.controllerMonth, date).toDateString() == new Date(this.year, this.month, this.day).toDateString();
     },
     controllerUpdate(newMonth) {
       if (newMonth > 11)
@@ -277,7 +285,7 @@ export default {
       let dayOfWeek = new Date(year, month).getDay();
       let startPadding = [];
       for (var i = 1; i <= dayOfWeek; i++) {
-        startPadding.push(i);
+        startPadding.push(i * -1);
       }
 
       let numDaysInMonth = new Date(year, month + 1, 0).getDate();
@@ -289,12 +297,29 @@ export default {
       dayOfWeek = new Date(year, month + 1).getDay();
       let endPadding = [];
       for (i = 1; i <= 7 - dayOfWeek; i++) {
-        endPadding.push(i);
+        endPadding.push(i + 100);
       }
 
       this.startPadding = startPadding;
       this.daysInMonth = daysInMonth;
       this.endPadding = endPadding;
+
+      this.weekStartPadding = [];
+      this.weekDaysInWeek = [];
+      this.weekEndPadding = [];
+      let monthIndex = Math.floor((startPadding.length + this.day - 1) / 7);
+      let totalDays = startPadding.concat(daysInMonth, endPadding);
+
+      for (i = 0; i < 7; i++) {
+        let day = totalDays[(monthIndex * 7) + i];
+        if (day < 0) {
+          this.weekStartPadding.push(day);
+        } else if (day > 100) {
+          this.weekEndPadding.push(day);
+        } else {
+          this.weekDaysInWeek.push(day);
+        }
+      }
     }
   }
 }

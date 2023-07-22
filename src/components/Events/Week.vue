@@ -18,7 +18,7 @@
       </template>
     </div>
     <div
-      class="grid grid-cols-7 grid-rows-6 w-full h-full"
+      class="grid grid-cols-7 grid-rows-1 w-full h-full"
     >
       <template
         v-for="padding in startPadding"
@@ -29,7 +29,7 @@
         />
       </template>
       <template
-        v-for="dayNum in daysInMonth"
+        v-for="dayNum in daysInWeek"
         :key="dayNum"
       >
         <div
@@ -56,7 +56,7 @@
 
 <script>
 export default {
-  name: 'MonthComponent',
+  name: 'WeekComponent',
   props: {
     days: {
         type: Array,
@@ -66,7 +66,7 @@ export default {
         type: Array,
         default: () => []
     },
-    daysInMonth: {
+    daysInWeek: {
         type: Array,
         default: () => []
     },
