@@ -15,6 +15,7 @@ const {
 } = require("./handlers/users");
 
 const {getTeamDetails} = require("./handlers/team");
+const {getEvents} = require("./handlers/calendar");
 
 app.post("/signup", signUp);
 app.post("/login", login);
@@ -25,5 +26,7 @@ app.get("/user/:handle", FBAuth, getUserDetails);
 // app.post('/user/image', FBAuth, uploadImage);
 
 app.get("/team", getTeamDetails);
+
+app.get("/calendar", getEvents);
 
 exports.api = functions.region("us-central1").https.onRequest(app);

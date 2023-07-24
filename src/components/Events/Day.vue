@@ -1,9 +1,7 @@
 <!-- eslint-disable vue/no-v-for-template-key -->
 <template>
   <div class="flex flex-col w-full h-full">
-    <div
-      class="grid grid-cols-1 w-full"
-    >
+    <div class="grid grid-cols-1 w-full">
       <template
         v-for="dayName in days"
         :key="dayName"
@@ -17,9 +15,7 @@
         </div>
       </template>
     </div>
-    <div
-      class="grid grid-cols-1 grid-rows-1 w-full h-full"
-    >
+    <div class="grid grid-cols-1 grid-rows-1 w-full h-full">
       <template
         v-for="dayNum in daysInWeek"
         :key="dayNum"
@@ -32,6 +28,22 @@
           >
             {{ dayNum }}
           </div>
+          <template
+            v-for="event in events"
+            :key="event.id"
+          >
+            <div
+              v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
+              :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+            >
+              <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`">
+                {{ event.info.name.stringValue }}
+                <p :class="`font-normal`">
+                  {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
+                </p>
+              </div>
+            </div>
+          </template>
         </div>
       </template>
     </div>
@@ -40,41 +52,59 @@
 
 <script>
 export default {
-    name: 'DayComponent',
-    props: {
-        days: {
-            type: Array,
-            default: () => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-        },
-        daysInWeek: {
-            type: Array,
-            default: () => []
-        },
-        today: {
-            type: Date,
-            default: new Date()
-        },
-        year: {
-            type: Number,
-            default: 0
-        },
-        month: {
-            type: Number,
-            default: 0
-        },
-        day: {
-            type: Number,
-            default: 0
-        }
+  name: 'DayComponent',
+  props: {
+    days: {
+      type: Array,
+      default: () => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     },
-    methods: {
-        isToday(date) {
-            return new Date(this.year, this.month, date).toDateString() == this.today.toDateString();
-        },
-        isSelected(date) {
-            return new Date(this.year, this.month, date).toDateString() == new Date(this.year, this.month, this.day).toDateString();
-        }
+    daysInWeek: {
+      type: Array,
+      default: () => []
+    },
+    today: {
+      type: Date,
+      default: new Date()
+    },
+    year: {
+      type: Number,
+      default: 0
+    },
+    month: {
+      type: Number,
+      default: 0
+    },
+    day: {
+      type: Number,
+      default: 0
+    },
+    events: {
+      type: Array,
+      default: () => []
     }
+  },
+  methods: {
+    isToday(date) {
+      return new Date(this.year, this.month, date).toDateString() == this.today.toDateString();
+    },
+    isSelected(date) {
+      return new Date(this.year, this.month, date).toDateString() == new Date(this.year, this.month, this.day).toDateString();
+    },
+    containsEvent(date, startTime, endTime) {
+      let currentDate = new Date(this.year, this.month, date);
+      startTime = new Date(startTime);
+      endTime = new Date(endTime);
+      startTime.setHours(0);
+      startTime.setMinutes(0);
+      startTime.setSeconds(0);
+      startTime.setMilliseconds(0);
+      endTime.setHours(0);
+      endTime.setMinutes(0);
+      endTime.setSeconds(0);
+      endTime.setMilliseconds(0);
+      return currentDate >= startTime && endTime >= currentDate;
+    }
+  }
 }
 </script>
 

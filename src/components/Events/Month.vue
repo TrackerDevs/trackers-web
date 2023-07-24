@@ -33,13 +33,27 @@
         :key="dayNum"
       >
         <div
-          :class="`border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
+          :class="`overflow-hidden border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
         >
           <div
             :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
           >
             {{ dayNum }}
           </div>
+          <template
+            v-for="event in events"
+            :key="event.id"
+          >
+            <div
+              v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
+              :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+            >
+              <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`">
+                {{ event.info.name.stringValue }}
+              </div>
+            </div>
+          </template>
+          <div class="bg-red-50 bg-red-600 text-red-600 bg-blue-50 bg-blue-600 text-blue-600 bg-orange-50 bg-orange-600 text-orange-600 bg-green-50 bg-green-600 text-green-600 bg-purple-50 bg-purple-600 text-purple-600 bg-cyan-50 bg-cyan-600 text-cyan-600 bg-fuchsia-50 bg-fuchsia-600 text-fuchsia-600" />
         </div>
       </template>
       <template
@@ -89,6 +103,10 @@ export default {
     day: {
       type: Number,
       default: 0
+    },
+    events: {
+        type: Array,
+        default: () => []
     }
   },
   methods: {
@@ -97,6 +115,20 @@ export default {
     },
     isSelected(date) {
       return new Date(this.year, this.month, date).toDateString() == new Date(this.year, this.month, this.day).toDateString();
+    },
+    containsEvent(date, startTime, endTime) {
+      let currentDate = new Date(this.year, this.month, date);
+      startTime = new Date(startTime);
+      endTime = new Date(endTime);
+      startTime.setHours(0);
+      startTime.setMinutes(0);
+      startTime.setSeconds(0);
+      startTime.setMilliseconds(0);
+      endTime.setHours(0);
+      endTime.setMinutes(0);
+      endTime.setSeconds(0);
+      endTime.setMilliseconds(0);
+      return currentDate >= startTime && endTime >= currentDate;
     }
   }
 }

@@ -1,9 +1,7 @@
 <!-- eslint-disable vue/no-v-for-template-key -->
 <template>
   <div class="flex flex-col w-full h-full">
-    <div
-      class="grid grid-cols-7 w-full"
-    >
+    <div class="grid grid-cols-7 w-full">
       <template
         v-for="dayName in days"
         :key="dayName"
@@ -17,16 +15,12 @@
         </div>
       </template>
     </div>
-    <div
-      class="grid grid-cols-7 grid-rows-1 w-full h-full"
-    >
+    <div class="grid grid-cols-7 grid-rows-1 w-full h-full">
       <template
         v-for="padding in startPadding"
         :key="padding"
       >
-        <div
-          class="text-center border-r border-b border-gray-300 bg-gray-200"
-        />
+        <div class="text-center border-r border-b border-gray-300 bg-gray-200" />
       </template>
       <template
         v-for="dayNum in daysInWeek"
@@ -40,15 +34,29 @@
           >
             {{ dayNum }}
           </div>
+          <template
+            v-for="event in events"
+            :key="event.id"
+          >
+            <div
+              v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
+              :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+            >
+              <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`">
+                {{ event.info.name.stringValue }}
+                <p :class="`font-normal`">
+                  {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
+                </p>
+              </div>
+            </div>
+          </template>
         </div>
       </template>
       <template
         v-for="padding in endPadding"
         :key="padding"
       >
-        <div
-          class="text-center border-r border-b border-gray-300 bg-gray-200"
-        />
+        <div class="text-center border-r border-b border-gray-300 bg-gray-200" />
       </template>
     </div>
   </div>
@@ -59,20 +67,20 @@ export default {
   name: 'WeekComponent',
   props: {
     days: {
-        type: Array,
-        default: () => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      type: Array,
+      default: () => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     },
     startPadding: {
-        type: Array,
-        default: () => []
+      type: Array,
+      default: () => []
     },
     daysInWeek: {
-        type: Array,
-        default: () => []
+      type: Array,
+      default: () => []
     },
     endPadding: {
-        type: Array,
-        default: () => []
+      type: Array,
+      default: () => []
     },
     today: {
       type: Date,
@@ -89,6 +97,10 @@ export default {
     day: {
       type: Number,
       default: 0
+    },
+    events: {
+        type: Array,
+        default: () => []
     }
   },
   methods: {
@@ -97,6 +109,20 @@ export default {
     },
     isSelected(date) {
       return new Date(this.year, this.month, date).toDateString() == new Date(this.year, this.month, this.day).toDateString();
+    },
+    containsEvent(date, startTime, endTime) {
+      let currentDate = new Date(this.year, this.month, date);
+      startTime = new Date(startTime);
+      endTime = new Date(endTime);
+      startTime.setHours(0);
+      startTime.setMinutes(0);
+      startTime.setSeconds(0);
+      startTime.setMilliseconds(0);
+      endTime.setHours(0);
+      endTime.setMinutes(0);
+      endTime.setSeconds(0);
+      endTime.setMilliseconds(0);
+      return currentDate >= startTime && endTime >= currentDate;
     }
   }
 }

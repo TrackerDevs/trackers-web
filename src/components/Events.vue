@@ -4,7 +4,7 @@
     <Nav :use-banner="false" />
     <div class="flex pt-[72px]">
       <div class="flex flex-col w-full h-[calc(100vh-72px)]">
-        <div class="border-b py-4">
+        <div class="border-b py-2">
           <div class="flex flex-row w-[85%] items-center mx-auto">
             <p class="text-gray-800 font-bold text-xl lg:w-[19rem] md:w-32">
               {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
@@ -31,7 +31,7 @@
                 <input
                   id="default-search"
                   type="search"
-                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
+                  class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
                   placeholder="Search"
                   required
                 >
@@ -158,6 +158,7 @@
             :month="month"
             :year="year"
             :day="day"
+            :events="store.events"
           />
           <Week
             v-if="type === 1"
@@ -168,6 +169,7 @@
             :month="month"
             :year="year"
             :day="day"
+            :events="store.events"
           />
           <Day
             v-if="type === 2"
@@ -177,6 +179,7 @@
             :year="year"
             :day="day"
             :days="[DAYS_FULL[dayName]]"
+            :events="store.events"
           />
         </div>
       </div>
@@ -189,6 +192,7 @@ import Nav from './Nav';
 import Month from "./Events/Month.vue";
 import Week from "./Events/Week.vue";
 import Day from "./Events/Day.vue";
+import { useCalendarEventsStore } from '../stores/calendarEvents';
 export default {
   name: 'EventsComponent',
   components: {
@@ -196,6 +200,11 @@ export default {
     Month,
     Week,
     Day
+  },
+  setup() {
+    const store = useCalendarEventsStore();
+    store.fetchEvents();
+    return { store };
   },
   data() {
     return {
