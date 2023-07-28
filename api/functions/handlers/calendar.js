@@ -12,7 +12,10 @@ exports.getEvents = async (req, res) => {
   const eventsData = docs.data.documents;
   if (eventsData) {
     const desc = eventsData.sort((a, b) => {
-      return a.fields.startTime.timestampValue > b.fields.startTime.timestampValue;
+      if (a.fields.startTime.timestampValue.split(".")[0] === b.fields.startTime.timestampValue.split(".")[0]) {
+        return a.fields.name.stringValue.localeCompare(b.fields.name.stringValue);
+      }
+      return a.fields.startTime.timestampValue.localeCompare(b.fields.startTime.timestampValue);
     });
     events = await Promise.all(
         desc.map(async (a) => {

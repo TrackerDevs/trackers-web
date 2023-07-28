@@ -12,7 +12,7 @@ exports.getTeamDetails = async (req, res) => {
   const people = docs.data.documents;
   if (people) {
     const desc = people.sort((a, b) => {
-      return a.fields.name.stringValue > b.fields.name.stringValue;
+      return a.fields.name.stringValue.localeCompare(b.fields.name.stringValue);
     });
     teamData = await Promise.all(
         desc.map(async (a) => {

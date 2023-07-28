@@ -21,29 +21,31 @@
         :key="dayNum"
       >
         <div
-          :class="`border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
+          :class="`overflow-auto border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
         >
           <div
             :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
           >
             {{ dayNum }}
           </div>
-          <template
-            v-for="event in events"
-            :key="event.id"
-          >
-            <div
-              v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
-              :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+          <div class="flex flex-wrap">
+            <template
+              v-for="event in events"
+              :key="event.id"
             >
-              <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`">
-                {{ event.info.name.stringValue }}
-                <p :class="`font-normal`">
-                  {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
-                </p>
+              <div
+                v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
+                :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+              >
+                <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`">
+                  {{ event.info.name.stringValue }}
+                  <p :class="`font-normal`">
+                    {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
+                  </p>
+                </div>
               </div>
-            </div>
-          </template>
+            </template>
+          </div>
         </div>
       </template>
     </div>
