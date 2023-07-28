@@ -28,6 +28,7 @@
       >
         <div
           :class="`z-[${dayNum}] relative overflow-auto border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
+          @click="gotoFunc(dayNum)"
         >
           <div
             :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
@@ -105,6 +106,10 @@ export default {
     events: {
       type: Array,
       default: () => []
+    },
+    gotoFunc: {
+      type: Function,
+      default: () => { }
     }
   },
   methods: {

@@ -159,6 +159,7 @@
             :year="year"
             :day="day"
             :events="store.events"
+            :goto-func="goto"
           />
           <Week
             v-if="type === 1"
@@ -170,6 +171,7 @@
             :year="year"
             :day="day"
             :events="store.events"
+            :goto-func="goto"
           />
           <Day
             v-if="type === 2"
@@ -217,7 +219,6 @@ export default {
       year: 0,
       day: 0,
       dayName: "",
-      datepickerValue: new Date(),
       startPadding: [],
       daysInMonth: [],
       endPadding: [],
@@ -329,6 +330,11 @@ export default {
           this.weekDaysInWeek.push(day);
         }
       }
+    },
+    goto(date) {
+      this.type = 2;
+      this.day = date;
+      this.dayName = new Date(this.year, this.month, this.day).getDay();
     }
   }
 }
