@@ -148,41 +148,65 @@
                 </template>
               </div>
             </div>
+            <div class="relative overflow-auto h-full border-t mt-4 p-4">
+              <div class="text-gray-800 font-bold ml-4">
+                Upcoming events
+              </div>
+              <div class="absolute left-6">
+                <template
+                  v-for="event in store.upcomingEvents"
+                  :key="event.id"
+                >
+                  <div class="flex flex-row">
+                    <div :class="`min-w-[4px] bg-${event.info.theme.stringValue}-600 m-2 rounded-md`" />
+                    <div
+                      :class="`text-gray-800 rounded-sm p-2`"
+                    >
+                      {{ event.info.name.stringValue }} - {{ new Date(event.info.startTime.timestampValue).toLocaleString() }}
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
           </div>
-          <Month
-            v-if="type === 0"
-            :start-padding="startPadding"
-            :days-in-month="daysInMonth"
-            :end-padding="endPadding"
-            :today="today"
-            :month="month"
-            :year="year"
-            :day="day"
-            :events="store.events"
-            :goto-func="goto"
-          />
-          <Week
-            v-if="type === 1"
-            :start-padding="weekStartPadding"
-            :days-in-week="weekDaysInWeek"
-            :end-padding="weekEndPadding"
-            :today="today"
-            :month="month"
-            :year="year"
-            :day="day"
-            :events="store.events"
-            :goto-func="goto"
-          />
-          <Day
-            v-if="type === 2"
-            :days-in-week="[daysInMonth[day - 1]]"
-            :today="today"
-            :month="month"
-            :year="year"
-            :day="day"
-            :days="[DAYS_FULL[dayName]]"
-            :events="store.events"
-          />
+          <div class="w-full h-full mx-4 pb-4">
+            <div class="w-full h-full border-l">
+              <Month
+                v-if="type === 0"
+                :start-padding="startPadding"
+                :days-in-month="daysInMonth"
+                :end-padding="endPadding"
+                :today="today"
+                :month="month"
+                :year="year"
+                :day="day"
+                :events="store.events"
+                :goto-func="goto"
+              />
+              <Week
+                v-if="type === 1"
+                :start-padding="weekStartPadding"
+                :days-in-week="weekDaysInWeek"
+                :end-padding="weekEndPadding"
+                :today="today"
+                :month="month"
+                :year="year"
+                :day="day"
+                :events="store.events"
+                :goto-func="goto"
+              />
+              <Day
+                v-if="type === 2"
+                :days-in-week="[daysInMonth[day - 1]]"
+                :today="today"
+                :month="month"
+                :year="year"
+                :day="day"
+                :days="[DAYS_FULL[dayName]]"
+                :events="store.events"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -206,6 +230,7 @@ export default {
   setup() {
     const store = useCalendarEventsStore();
     store.fetchEvents();
+    store.fetchUpcomingEvents();
     return { store };
   },
   data() {
@@ -334,7 +359,7 @@ export default {
     goto(date) {
       this.type = 2;
       this.day = date;
-      this.dayName = new Date(this.year, this.month, this.day).getDay();
+      this.update();
     }
   }
 }

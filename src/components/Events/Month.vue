@@ -15,7 +15,7 @@
         </div>
       </template>
     </div>
-    <div class="grid grid-cols-7 grid-rows-6 w-full h-full">
+    <div :class="`grid grid-cols-7 grid-rows-[${(startPadding.length + daysInMonth.length + endPadding.length) / 7}] w-full h-full`">
       <template
         v-for="padding in startPadding"
         :key="padding"
@@ -53,7 +53,7 @@
             </template>
           </div>
           <div
-            class="bg-red-50 bg-red-600 text-red-600 bg-blue-50 bg-blue-600 text-blue-600 bg-orange-50 bg-orange-600 text-orange-600 bg-green-50 bg-green-600 text-green-600 bg-purple-50 bg-purple-600 text-purple-600 bg-cyan-50 bg-cyan-600 text-cyan-600 bg-fuchsia-50 bg-fuchsia-600 text-fuchsia-600 z-[0] z-[1] z-[2] z-[3] z-[4] z-[5] z-[6] z-[7] z-[8] z-[9] z-[10] z-[11] z-[12] z-[13] z-[14] z-[15] z-[16] z-[17] z-[18] z-[19] z-[20] z-[21] z-[22] z-[23] z-[24] z-[25] z-[26] z-[27] z-[28] z-[29] z-[30] z-[31]"
+            class="bg-red-50 bg-red-600 text-red-600 bg-blue-50 bg-blue-600 text-blue-600 bg-orange-50 bg-orange-600 text-orange-600 bg-green-50 bg-green-600 text-green-600 bg-purple-50 bg-purple-600 text-purple-600 bg-cyan-50 bg-cyan-600 text-cyan-600 bg-fuchsia-50 bg-fuchsia-600 text-fuchsia-600 z-[0] z-[1] z-[2] z-[3] z-[4] z-[5] z-[6] z-[7] z-[8] z-[9] z-[10] z-[11] z-[12] z-[13] z-[14] z-[15] z-[16] z-[17] z-[18] z-[19] z-[20] z-[21] z-[22] z-[23] z-[24] z-[25] z-[26] z-[27] z-[28] z-[29] z-[30] z-[31] grid-rows-5 grid-rows-6"
           />
         </div>
       </template>

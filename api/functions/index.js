@@ -15,7 +15,7 @@ const {
 } = require("./handlers/users");
 
 const {getTeamDetails} = require("./handlers/team");
-const {getEvents} = require("./handlers/calendar");
+const {getEvents, getUpcomingEvents} = require("./handlers/calendar");
 
 app.post("/signup", signUp);
 app.post("/login", login);
@@ -28,5 +28,6 @@ app.get("/user/:handle", FBAuth, getUserDetails);
 app.get("/team", getTeamDetails);
 
 app.get("/calendar", getEvents);
+app.get("/calendar/upcoming", getUpcomingEvents);
 
 exports.api = functions.region("us-central1").https.onRequest(app);
