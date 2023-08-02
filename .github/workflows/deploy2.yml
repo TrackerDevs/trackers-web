@@ -32,6 +32,7 @@ jobs:
           username: ${{ secrets.GL_SSH_USERNAME }}
           key: ${{ secrets.GL_SSH_SECRET }}
           port: ${{ secrets.GL_SSH_PORT }}
+          passphrase: ${{ secrets.GL_SSH_PASSPHRASE }}
           script: |
             docker pull registry.digitalocean.com/trackers/trackers-web:latest
             docker stop trackers-web
