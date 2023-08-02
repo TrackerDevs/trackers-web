@@ -2,5 +2,5 @@ const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
 	transpileDependencies: true,
 	outputDir: "./build",
-	publicPath: "/trackers-web"
+	// publicPath: "/trackers-web"
 });
