@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-for-template-key -->
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
@@ -27,6 +28,39 @@
               up
             </button>
           </router-link>
+        </div>
+      </div>
+      
+      <hr>
+
+      <div class="my-10 mx-24">
+        <h2 class="text-4xl font-medium mb-8">
+          Upcoming Events
+        </h2>
+        <div class="flex flex-wrap justify-center">
+          <template
+            v-for="event in store.upcomingEvents"
+            :key="event.id"
+          >
+            <router-link
+              to="/events"
+              class="flex flex-col w-fit text-center m-8 cursor-pointer"
+            >
+              <div :class="`w-fit mx-auto w-[150px] h-[150px] bg-${event.info.theme.stringValue}-600 m-2 rounded-full text-white text-8xl font-medium flex justify-center items-center`">
+                {{ event.info.name.stringValue.toUpperCase().substring(0, 1) }}
+              </div>
+              <div
+                :class="`text-gray-600 font-medium p-2`"
+              >
+                {{ new Date(event.info.startTime.timestampValue).toDateString().toUpperCase().substring(3) }}
+              </div>
+              <div
+                :class="`text-gray-800 font-bold p-2`"
+              >
+                {{ event.info.name.stringValue }}
+              </div>
+            </router-link>
+          </template>
         </div>
       </div>
 
@@ -182,18 +216,14 @@
       </section>
 
       <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
-        <div
-          class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] h-[16rem] invisible sm:visible"
-        >
+        <div class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] h-[16rem] invisible sm:visible">
           <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
           >
         </div>
 
-        <div
-          class="flex flex-wrap bg-white w-[24rem] h-[16rem] sm:w-[32rem] divide-y"
-        >
+        <div class="flex flex-wrap bg-white w-[24rem] h-[16rem] sm:w-[32rem] divide-y">
           <router-link
             to="/events"
             class="w-full"
@@ -260,11 +290,17 @@
 <script>
 import Nav from './Nav';
 import Footer from './Footer';
+import { useCalendarEventsStore } from '../stores/calendarEvents';
 export default {
   name: 'LandingComponent',
   components: {
     Nav,
     Footer
+  },
+  setup() {
+    const store = useCalendarEventsStore();
+    store.fetchUpcomingEvents();
+    return { store };
   }
 }
 </script>

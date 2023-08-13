@@ -129,12 +129,11 @@
                   :key="dayNum"
                 >
                   <div
-                    :class="`group text-center items-center justify-center cursor-pointer`"
+                    :class="`flex group text-center items-center justify-center cursor-pointer`"
                     @click="month = controllerMonth; year = controllerYear; day = dayNum; update()"
                   >
-                    <!-- TODO: Fix transition -->
                     <p
-                      :class="`inline-flex items-center justify-center text-center w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'} ${controllerIsSelected(dayNum) ? 'border border-blue-500' : ''}`"
+                      :class="`flex items-center justify-center w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'} ${controllerIsSelected(dayNum) ? 'border border-blue-500' : ''}`"
                     >
                       {{ dayNum }}
                     </p>
