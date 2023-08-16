@@ -7,16 +7,15 @@
         <img
           class="h-16 mb-3 ml-auto mr-auto"
           src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
-          alt="CS Trackers Logo"
+          alt="Trackers Logo"
         >
         <h1 class="text-center mb-3 text-6xl leading-none text-slate-900">
-          CS Trackers
+          Trackers
         </h1>
         <h1 class="text-center mb-3 text-2xl leading-none text-slate-900">
-          CS Trackers was created during the midst of the global pandemic back in 2020 to connect computer science
-          students who couldn't do so in person. Years later, CS Trackers is still the most popular and active student
-          forum for help with any class, support for future careers, and a place for friendships and connections to be
-          formed.
+          Trackers was created during the midst of the global pandemic back in 2020 to connect computer science
+          students who couldn't do so in person. Years later, Trackers has expanded to multiple majors within the College of Engineering and is still the most popular and active student
+          forum for help at UIC. This is a place for every member to academically grow and meet others with similar majors and interests.
         </h1>
         <div class="text-center mt-8 space-y-6">
           <router-link to="/signup">
@@ -95,13 +94,13 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-900">
-                  1700+
+                  2000+
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
                   Members
                 </h5>
                 <p class="text-gray-500">
-                  CS Trackers is the largest computer science community of all UIC student organizations!
+                  Trackers is the largest community out of all the UIC CoE student organizations!
                 </p>
               </div>
             </div>
@@ -130,9 +129,11 @@
                 <h5 class="text-lg font-medium mb-4">
                   Tracked Classes
                 </h5>
+                <!-- TODO FIXME
+                All years of experience are supported whether you're first or second year or undergraduate or graduate!
+                -->
                 <p class="text-gray-500">
-                  All years of experience are supported whether you're first or second year or undergraduate or
-                  graduate!
+                  All undergraduate courses are supported, from 100 level to 400 level.
                 </p>
               </div>
             </div>
@@ -156,13 +157,13 @@
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold text-blue-800">
-                  49
+                  1-2
                 </h3>
                 <h5 class="text-lg font-medium mb-4">
-                  Projects
+                  Weekly Workshops/Events
                 </h5>
                 <p class="text-gray-500">
-                  Cupiditate enim, minus nulla dolor cumque iure eveniet facere ullam
+                  Trackers hosts in person and virtual workshops as well as events to help grow your professional career.
                 </p>
               </div>
             </div>
@@ -170,7 +171,7 @@
         </div>
       </section>
 
-      <section class="mb-32 text-gray-800">
+      <!-- <section class="mb-32 text-gray-800">
         <div
           class="relative overflow-hidden bg-no-repeat bg-cover"
           style="background-position: 50%;background-image: url('https://mdbootstrap.com/img/new/textures/full/66.jpg');height: 300px;"
@@ -213,7 +214,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
         <div class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] h-[16rem] invisible sm:visible">

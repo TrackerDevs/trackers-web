@@ -198,13 +198,16 @@
             Our Mission
           </h3>
           <p class="text-gray-500 mb-6">
+            At Trackers, we push our members forward to their limits while supporting them to a brighter future. We strive to grow our members by providing up to date resources regarding the courses they are taking and the ability to stay connected with the community both online and offline. This is a place for every member to academically grow and meet others with similar majors and interests.
+          </p>
+          <!-- <p class="text-gray-500 mb-6">
             Interact with the community more actively by joining or hosting events. These events can be meetups, study
             sessions, coding workshops, resume reviews, job search preps, and more!
           </p>
           <p class="text-gray-500 mb-6">
             View upcoming events here or on the Discord server. Join our email list to receive updates about new events
             and times.
-          </p>
+          </p> -->
         </div>
       </div>
 
@@ -229,6 +232,9 @@
             Our Vision
           </h3>
           <p class="text-gray-500 mb-6">
+            At Trackers, we wish to provide support to every member's professional career with our infrastructure. Built and designed by our team, we strive to be able to showcase our member's both creative and technical skills to our partners.
+          </p>
+          <!-- <p class="text-gray-500 mb-6">
             Active community members taking classes right along side you who keep everything in the class up to date and
             organized for you. Community Tracker Mods send announcements for new homework, incoming due dates, and
             grades being released. These community members also make sure every chat is open and welcoming to everyone
@@ -239,7 +245,7 @@
             each course, and the amount and names of all assigned tracker mods is included on this website. Apply to
             become a Community Tracker Mod today and help fellow classmates and yourself with course workloads and
             recommend this community to others!
-          </p>
+          </p> -->
         </div>
       </div>
 

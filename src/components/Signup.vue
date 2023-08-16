@@ -7,7 +7,7 @@
           <div class="w-96 px-4">
             <!-- Heading -->
             <h1 class="text-xl font-semibold">
-              Welcome to CS Trackers!
+              Welcome to Trackers!
             </h1>
             <small class="text-gray-400">Please enter your details</small>
 

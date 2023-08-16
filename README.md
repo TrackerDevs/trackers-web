@@ -1,5 +1,5 @@
 
-# CS Tracker @ UIC Website Source
+# Trackers Website Source
 
 ### Requirements
 

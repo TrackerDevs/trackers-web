@@ -9,11 +9,11 @@
               <img
                 class="h-8"
                 src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
-                alt="CS Trackers Logo"
+                alt="Trackers Logo"
               >
             </h6>
             <div class="mb-4">
-              Made with &#60;3 by CS Tracker Devs
+              Made with &#60;3 by Tracker Devs
             </div>
             <div class="mb-4">
               © 2022-2023 Trackers
