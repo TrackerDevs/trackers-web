@@ -152,6 +152,11 @@
                 Upcoming events
               </div>
               <div class="absolute left-6">
+                <div v-if="store.upcomingEvents.length == 0">
+                  <p class="m-2">
+                    No upcoming events
+                  </p>
+                </div>
                 <template
                   v-for="event in store.upcomingEvents"
                   :key="event.id"

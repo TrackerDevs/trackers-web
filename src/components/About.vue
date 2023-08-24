@@ -29,18 +29,10 @@
             Active Discord Server
           </h3>
           <p class="text-gray-500 mb-6">
-            Join an active Discord server and interact with fellow peers. Pick the classes you are currently taking and
-            discuss future classes with previous students. Interact with classmates for all of your courses, and keep
-            track of when homework and projects are due. Collaborate with people for group projects or group study
-            sessions. Ask questions on homework and projects, and compare your performance to others. Even get real time
-            access to teacher assistants and school faculty!
+            Join an active Discord server and interact with fellow peers. Connect with students in the classes you are currently taking and discuss future classes with students who have already taken them. Keep track of when homework and projects are due. Collaborate with people for group projects or group study sessions. Ask questions on homework and projects. Even get real time access to teaching assistants and school faculty!
           </p>
           <p class="text-gray-500">
-            There is more than just classes! Interact with fellow musicians, cooks, gamers, and gym goers. Discuss
-            financial markets and companies. Use your skills to contribute to the Trackers community and join ongoing
-            projects. Stay ahead career wise by getting questions answered about career fairs, internships and early
-            career opportunities and jobs. Get behind the scenes advice and information from school Alumni working in
-            industry.
+            There is more than just classes! Interact with fellow musicians, cooks, gamers, and gym goers. Discuss financial markets and companies. Use your skills to contribute to the Trackers community and join ongoing projects. Stay ahead career wise by getting questions answered about career fairs, internships and early career opportunities and jobs. Get behind the scenes advice and information from school alumni working in the industry.
           </p>
         </div>
       </div>
@@ -66,12 +58,10 @@
             In-person and Virtual Events
           </h3>
           <p class="text-gray-500 mb-6">
-            Interact with the community more actively by joining or hosting events. These events can be meetups, study
-            sessions, coding workshops, resume reviews, job search preps, and more!
+            Interact with the community more actively by joining and participating in events. These events include meetups, study sessions, coding workshops, resume reviews, job search preps, and more!
           </p>
           <p class="text-gray-500 mb-6">
-            View upcoming events here or on the Discord server. Join our email list to receive updates about new events
-            and times.
+            View upcoming events here or on the Discord server.
           </p>
           <router-link to="/events">
             <button
@@ -115,19 +105,16 @@
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
           <h3 class="text-2xl font-bold mb-4">
-            Community Trackers
+            Course Trackers
           </h3>
           <p class="text-gray-500 mb-6">
-            Active community members taking classes right along side you who keep everything in the class up to date and
-            organized for you. Community Tracker Mods send announcements for new homework, incoming due dates, and
-            grades being released. These community members also make sure every chat is open and welcoming to everyone
-            and academic honesty is followed at all times. Never miss a homework assignment ever again!
+            Course Trackers send announcements for new homework, incoming due dates, and grades being released. They are your fellow classmates who volunteer to keep everyone up to date on new developments that happen in class. They also ensure every chat is open and welcoming to everyone, and that academic honesty is followed at all times. Never miss an assignment deadline ever again!
+          </p>
+          <p class="text-gray-500 mb-6">
+            If you would like to volunteer and help the community, please apply to become a Course Tracker today!
           </p>
           <p class="text-gray-500">
-            A fully comprehensive and regularly updated list of all classes being taught, which professors are teaching
-            each course, and the amount and names of all assigned tracker mods is included on this website. Apply to
-            become a Community Tracker Mod today and help fellow classmates and yourself with course workloads and
-            recommend this community to others!
+            Note: A fully comprehensive and regularly updated list of all classes being taught, which professors are teaching each course, and the names of all assigned Course Trackers are included on this website.
           </p>
         </div>
       </div>
@@ -161,18 +148,7 @@
             Our Story
           </h3>
           <p class="text-gray-500 mb-6">
-            Join an active Discord server and interact with fellow peers. Pick the classes you are currently taking and
-            discuss future classes with previous students. Interact with classmates for all of your courses, and keep
-            track of when homework and projects are due. Collaborate with people for group projects or group study
-            sessions. Ask questions on homework and projects, and compare your performance to others. Even get real time
-            access to teacher assistants and school faculty!
-          </p>
-          <p class="text-gray-500">
-            There is more than just classes! Interact with fellow musicians, cooks, gamers, and gym goers. Discuss
-            financial markets and companies. Use your skills to contribute to the Trackers community and join ongoing
-            projects. Stay ahead career wise by getting questions answered about career fairs, internships and early
-            career opportunities and jobs. Get behind the scenes advice and information from school Alumni working in
-            industry.
+            The community was founded on August 24th, 2020. It was a time of uncertainty for everyone. Many were sad and upset at the lack of socializing and the college experience they were looking forward to due to the transition of being from in-person to online. It was during this time that the community founder decided to bring together the students within his CS classes using Discord as a service. In doing so, he created a small haven which has expanded over the years to become the large community we are today. Even with the transition back to in-person education, the community continues to thrive on Discord, now expanding to different majors under College of Engineering, and using Trackers as a key resources for networking and professional growth purposes.
           </p>
         </div>
       </div>

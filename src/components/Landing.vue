@@ -37,6 +37,11 @@
           Upcoming Events
         </h2>
         <div class="flex flex-wrap justify-center">
+          <div v-if="store.upcomingEvents.length == 0">
+            <p class="m-8">
+              No upcoming events
+            </p>
+          </div>
           <template
             v-for="event in store.upcomingEvents"
             :key="event.id"
