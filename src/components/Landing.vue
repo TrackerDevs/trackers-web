@@ -6,7 +6,7 @@
       <div class="mt-32 mb-16 h-[75vh]">
         <img
           class="h-16 mb-3 ml-auto mr-auto"
-          src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
+          src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo-2-trim.png?alt=media"
           alt="Trackers Logo"
         >
         <h1 class="text-center mb-3 text-6xl leading-none text-slate-900">

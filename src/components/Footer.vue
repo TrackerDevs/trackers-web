@@ -8,7 +8,7 @@
             <h6 class="font-semibold mb-4 flex items-center justify-center md:justify-start">
               <img
                 class="h-8 mr-4"
-                src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
+                src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo-2-trim.png?alt=media"
                 alt="Trackers Logo"
               >
               Trackers

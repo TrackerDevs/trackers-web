@@ -27,11 +27,11 @@
       </p>
     </div>
     <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center">
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 mr-2">
         <router-link to="/">
           <img
             class="h-10"
-            src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
+            src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo-2-trim.png?alt=media"
             alt="Trackers Logo"
           >
         </router-link>
