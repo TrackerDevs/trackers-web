@@ -161,7 +161,10 @@
                   v-for="event in store.upcomingEvents"
                   :key="event.id"
                 >
-                  <div class="flex flex-row">
+                  <div
+                    class="flex flex-row cursor-pointer"
+                    @click="goto(new Date(event.info.startTime.timestampValue).getDate())"
+                  >
                     <div :class="`min-w-[4px] bg-${event.info.theme.stringValue}-600 m-2 rounded-md`" />
                     <div
                       :class="`text-gray-800 rounded-sm p-2`"

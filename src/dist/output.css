@@ -941,6 +941,10 @@ video {
   display: grid;
 }
 
+.h-\[30rem\] {
+  height: 30rem;
+}
+
 .h-full {
   height: 100%;
 }

@@ -63,6 +63,11 @@
               >
                 {{ event.info.name.stringValue }}
               </div>
+              <div
+                :class="`text-gray-800`"
+              >
+                Location: <span class="font-bold">{{ event.info.locationName.stringValue }}</span>
+              </div>
             </router-link>
           </template>
         </div>

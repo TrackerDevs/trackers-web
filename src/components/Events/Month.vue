@@ -42,7 +42,7 @@
             >
               <div
                 v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
-                :class="`w-full bg-${event.info.theme.stringValue}-600 my-2 mx-2 rounded-md pl-1`"
+                :class="`bg-${event.info.theme.stringValue}-600 my-2 mx-2 rounded-md pl-1`"
               >
                 <div
                   :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 font-bold rounded-sm p-2`"

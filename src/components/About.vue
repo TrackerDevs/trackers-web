@@ -11,17 +11,15 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2FUIC_Campus.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="uic campus image"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -40,17 +38,15 @@
       <div class="flex flex-wrap mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2FUIC_Campus2.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="uic campus"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
@@ -90,17 +86,15 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2FUIC_Campus3.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="uic campus"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -130,17 +124,15 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Ftrackers-logo-v4-cs-banner-invite.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="trackers logo banner"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
@@ -156,17 +148,15 @@
       <div class="flex flex-wrap mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Ftrackers-logo-v4-me-banner-invite.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="trackers logo banner"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
@@ -190,17 +180,15 @@
       <div class="flex flex-wrap flex-row-reverse mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
-            <router-link to="#!">
-              <img
-                src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                class="w-full"
-                alt="Louvre"
-              >
-              <div
-                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                style="background-color: rgba(251, 251, 251, 0.2)"
-              />
-            </router-link>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2FUIC_Halsted.jpg?alt=media"
+              class="w-full h-[30rem]"
+              alt="uic halsted station"
+            >
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            />
           </div>
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
