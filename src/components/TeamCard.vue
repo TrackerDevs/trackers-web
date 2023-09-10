@@ -9,10 +9,13 @@
     <h5 class="text-lg font-bold mb-4">
       {{ name.stringValue }}
     </h5>
-    <p class="mb-6">
+    <p class="mb-4">
       {{ position.stringValue }}
     </p>
-    <ul class="list-inside flex mx-auto justify-center mb-6">
+    <p class="mb-4 text-blue-600 font-bold">
+      @{{ tag.stringValue }}
+    </p>
+    <!-- <ul class="list-inside flex mx-auto justify-center mb-6">
       <router-link
         to="#!"
         class="px-2"
@@ -58,7 +61,7 @@
           />
         </svg>
       </router-link>
-    </ul>
+    </ul> -->
     <p class="mb-6">
       {{ bio.stringValue }}
     </p>
@@ -72,6 +75,10 @@ export default {
     name: {
       type: Object,
       default: () => ({ stringValue: "Name" })
+    },
+    tag: {
+      type: Object,
+      default: () => ({ stringValue: "Discord Tag" })
     },
     position: {
       type: Object,

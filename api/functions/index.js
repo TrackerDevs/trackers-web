@@ -17,6 +17,8 @@ const {
 const {getTeamDetails} = require("./handlers/team");
 const {getEvents, getUpcomingEvents} = require("./handlers/calendar");
 
+const {retrieveAvatars} = require("./discordApi");
+
 app.post("/signup", signUp);
 app.post("/login", login);
 app.get("/user", FBAuth, getAuthenticatedUser);
@@ -30,4 +32,8 @@ app.get("/team", getTeamDetails);
 app.get("/calendar", getEvents);
 app.get("/calendar/upcoming", getUpcomingEvents);
 
+app.get("/discord/test", retrieveAvatars);
+
 exports.api = functions.region("us-central1").https.onRequest(app);
+
+exports.discordFunctions = functions.region("us-central1").pubsub.schedule("0 0 * * SUN").onRun(retrieveAvatars);
