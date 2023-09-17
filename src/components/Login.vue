@@ -90,9 +90,9 @@
                   </p>
                 </div>
 
-                <router-link
-                  to="#!"
+                <button
                   :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
+                  @click.prevent="handleGoogleAuth"
                 >
                   <img
                     class="w-5 h-5 mr-2"
@@ -111,7 +111,7 @@
                       >Loading...</span>
                     </div>
                   </div>
-                </router-link>
+                </button>
               </div>
             </form>
 
@@ -146,6 +146,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { useUserDataStore } from '../stores/userData';
 import { useUIStore } from '../stores/uiStore';
+import { googleAuthCodeLogin } from "vue3-google-login";
 export default {
     name: 'LoginComponent',
     components: {
@@ -172,6 +173,11 @@ export default {
           }
           this.userStore.loginUser(userData, this.$router);
         }
+      },
+      handleGoogleAuth() {
+        googleAuthCodeLogin().then((res) => {
+          this.userStore.loginUserGoogle(res.code, this.$router);
+        });
       }
     }
 }

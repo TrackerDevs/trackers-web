@@ -10,6 +10,7 @@ const {
   addUserDetails,
   getAuthenticatedUser,
   getUserDetails,
+  googleOAuth,
   // deleteUser,
   // uploadImage
 } = require("./handlers/users");
@@ -32,7 +33,9 @@ app.get("/team", getTeamDetails);
 app.get("/calendar", getEvents);
 app.get("/calendar/upcoming", getUpcomingEvents);
 
-app.get("/discord/test", retrieveAvatars);
+// app.get("/discord/test", retrieveAvatars);
+
+app.post("/auth/google", googleOAuth);
 
 exports.api = functions.region("us-central1").https.onRequest(app);
 

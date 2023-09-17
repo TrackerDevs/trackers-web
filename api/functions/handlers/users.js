@@ -157,3 +157,79 @@ exports.getAuthenticatedUser = async (req, res) => {
   // TODO: retrieve other info for other collections (messages, notifs, etc)
   return res.json({userData});
 };
+
+const {OAuth2Client} = require("google-auth-library");
+const oAuth2Client = new OAuth2Client(
+    config.clientId,
+    config.clientSecret,
+    "postmessage",
+);
+
+exports.googleOAuth = async (req, res) => {
+  const {tokens} = await oAuth2Client.getToken(req.body.code).catch((err) => {
+    return res.status(500).json({error: err.response.data});
+  });
+
+  delete axios.defaults.headers.common["Authorization"];
+  let data = await axios
+      .post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key=${config.apiKey}`, {
+        "postBody": `id_token=${tokens.id_token}&providerId=google.com`,
+        "requestUri": "http://localhost",
+        "returnIdpCredential": true,
+        "returnSecureToken": true,
+      })
+      .catch((err) => {
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  const token = data.data.idToken;
+  const refreshToken = data.data.refreshToken;
+
+  data = data.data;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  if (data.isNewUser) {
+    await axios
+        .post(
+            `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/users/?documentId=${data.localId}`,
+            {
+              fields: {
+                username: {stringValue: data.displayName},
+                email: {stringValue: data.email},
+                imageUrl: {stringValue: data.photoUrl},
+                status: {stringValue: ""},
+                id: {stringValue: data.localId},
+              // last login date? (below?)
+              },
+            },
+        )
+        .catch((err) => {
+          return res.status(500).json({error: err.response.data.error.message});
+        });
+
+    return res.status(201).json({refreshToken});
+  } else {
+    const fields = {imageUrl: {stringValue: data.photoUrl}};
+    const mask = ["imageUrl"];
+
+    await axios
+        .post(`https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents:commit`, {
+          writes: [
+            {
+              update: {
+                fields,
+                name: `projects/${config.projectId}/databases/(default)/documents/users/${data.localId}`,
+              },
+              updateMask: {fieldPaths: mask},
+            },
+          ],
+        })
+        .catch((err) => {
+          return res.status(500).json({error: err.response.data.error.message});
+        });
+
+    // TODO:
+    // https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=[API_KEY]
+    // (get createdAt and lastLoginAt)
+    return res.status(200).json({refreshToken});
+  }
+};

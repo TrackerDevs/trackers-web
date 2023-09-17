@@ -60,6 +60,21 @@ export const useUserDataStore = defineStore("userData", {
 			delete axios.defaults.headers.common["Authorization"];
 			this.authenticated = false;
 			router.go();
+		},
+		async loginUserGoogle (code, router) {
+			const uiStore = useUIStore();
+			try {
+				uiStore.loadingUI();
+				const res = await axios.post("/auth/google", { code });
+				localStorage.setItem("RefreshToken", res.data.refreshToken);
+				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
+				await this.fetchUser();
+				uiStore.clearErrors();
+				router.push({ path: "/" });
+			} catch (e) {
+				// console.log(e);
+				uiStore.setErrors(e.response.data);
+			}
 		}
 	}
 });

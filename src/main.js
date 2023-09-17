@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import vue3GoogleLogin from 'vue3-google-login';
 
 import Landing from "./components/Landing";
 import Login from "./components/Login";
@@ -23,6 +24,10 @@ axios.defaults.baseURL = "https://us-central1-cs-trackers.cloudfunctions.net/api
 import { useUserDataStore } from "./stores/userData";
 
 const app = createApp(App);
+
+app.use(vue3GoogleLogin, {
+	clientId: "935833516033-47ej1juso2sihf7cu7h6jqict9vddnqj.apps.googleusercontent.com"
+})
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);

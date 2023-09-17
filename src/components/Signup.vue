@@ -93,9 +93,9 @@
                   </p>
                 </div>
 
-                <router-link
-                  to="#"
+                <button
                   :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
+                  @click.prevent="handleGoogleAuth"
                 >
                   <img
                     class="w-5 h-5 mr-2"
@@ -114,7 +114,7 @@
                       >Loading...</span>
                     </div>
                   </div>
-                </router-link>
+                </button>
               </div>
             </form>
 
@@ -147,6 +147,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { useUserDataStore } from '../stores/userData';
 import { useUIStore } from '../stores/uiStore';
+import { googleAuthCodeLogin } from "vue3-google-login";
 export default {
   name: 'SignupComponent',
   components: {
@@ -177,6 +178,11 @@ export default {
         }
         this.userStore.signupUser(userData, this.$router);
       }
+    },
+    handleGoogleAuth() {
+      googleAuthCodeLogin().then((res) => {
+        this.userStore.loginUserGoogle(res.code, this.$router);
+      });
     }
   }
 }
@@ -184,8 +190,9 @@ export default {
 
 <style>
 @import '../dist/output.css';
+
 .gradient {
-  background: rgb(0,19,34);
-  background: linear-gradient(34deg, rgba(0,19,34,1) 0%, rgba(40,20,35,1) 62%, rgba(245,31,29,1) 100%);
+  background: rgb(0, 19, 34);
+  background: linear-gradient(34deg, rgba(0, 19, 34, 1) 0%, rgba(40, 20, 35, 1) 62%, rgba(245, 31, 29, 1) 100%);
 }
 </style>
