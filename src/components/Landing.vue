@@ -18,13 +18,24 @@
           forum for help at UIC. This is a place for every member to academically grow and meet others with similar majors and interests.
         </h1>
         <div class="text-center mt-8 space-y-6">
+          <a
+            href="https://discord.gg/xYW8hsesjt"
+            target="_blank"
+          >
+            <button
+              type="button"
+              class="inline-block mr-16 px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              Join the Discord
+            </button>
+          </a>
           <router-link to="/signup">
             <button
               type="button"
               class="inline-block px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               Sign
-              up
+              up for events
             </button>
           </router-link>
         </div>

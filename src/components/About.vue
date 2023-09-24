@@ -24,13 +24,13 @@
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6">
           <h3 class="text-2xl font-bold mb-4">
-            Active Discord Server
+            Active Community
           </h3>
           <p class="text-gray-500 mb-6">
-            Join an active Discord server and interact with fellow peers. Connect with students in the classes you are currently taking and discuss future classes with students who have already taken them. Keep track of when homework and projects are due. Collaborate with people for group projects or group study sessions. Ask questions on homework and projects. Even get real time access to teaching assistants and school faculty!
+            Join an active UIC Discord server to interact with fellow classmates. Create connections with students in the classes you are currently taking, and keep track of due dates for homework and projects. Collaborate with people for group projects or study sessions. Discuss and receive advice about future classes from peers, upperclassmen, and even alumni! Additionally, get real time access to teaching assistants and school faculty!
           </p>
           <p class="text-gray-500">
-            There is more than just classes! Interact with fellow musicians, cooks, gamers, and gym goers. Discuss financial markets and companies. Use your skills to contribute to the Trackers community and join ongoing projects. Stay ahead career wise by getting questions answered about career fairs, internships and early career opportunities and jobs. Get behind the scenes advice and information from school alumni working in the industry.
+            This server supports more than just classes, we foster a community! Interact with fellow musicians, cooks, gamers, and gym enthusiasts. Discuss financial markets, investing, and companies for future employment. Use your professional skills to contribute to the Trackers community by joining ongoing projects. Stay ahead, by getting questions answered about career fairs, internships, early career opportunities, and jobs. Get exclusive advice from UIC alumni working in the industry.
           </p>
         </div>
       </div>
@@ -54,16 +54,44 @@
             In-person and Virtual Events
           </h3>
           <p class="text-gray-500 mb-6">
-            Interact with the community more actively by joining and participating in events. These events include meetups, study sessions, coding workshops, resume reviews, job search preps, and more!
+            Interact with the Trackers student organization by joining and actively participating in events. These events include social meetups, study sessions, coding workshops, resume reviews, networking events, and more!
           </p>
           <p class="text-gray-500 mb-6">
-            View upcoming events here or on the Discord server.
+            View upcoming events on this website or on the <a
+              href="https://discord.gg/xYW8hsesjt"
+              target="_blank"
+              class="text-blue-600 font-bold underline decoration-transparent hover:decoration-current transition-all duration-300 ease-in-out"
+            >Discord server</a>.
           </p>
           <router-link to="/events">
             <button
-              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex"
+              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
             >
               <p>View Events</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 ml-4 relative top-[0.05em]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </router-link>
+          <p class="text-gray-500 mb-6">
+            Please fill out this form to join our listserv to receive updates about new events and times:
+          </p>
+          <router-link to="/rsvp">
+            <button
+              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
+            >
+              <p>Subscribe to mailing list</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -102,13 +130,37 @@
             Course Trackers
           </h3>
           <p class="text-gray-500 mb-6">
-            Course Trackers send announcements for new homework, incoming due dates, and grades being released. They are your fellow classmates who volunteer to keep everyone up to date on new developments that happen in class. They also ensure every chat is open and welcoming to everyone, and that academic honesty is followed at all times. Never miss an assignment deadline ever again!
+            Course Trackers are students who volunteer to keep everyone up to date on new developments that happen in classes. They send announcements regarding homework, upcoming due dates, and when grades are released. Course trackers also ensure that chats are open and welcoming for everyone, and that academic honesty is followed at all times. With course trackers, you'll never miss an assignment deadline again!
           </p>
           <p class="text-gray-500 mb-6">
             If you would like to volunteer and help the community, please apply to become a Course Tracker today!
           </p>
+          <a
+            href="https://forms.gle/Dwy2wJ6TCqJy14as7"
+            target="_blank"
+          >
+            <button
+              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
+            >
+              <p>View Form</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 ml-4 relative top-[0.05em]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </a>
           <p class="text-gray-500">
-            Note: A fully comprehensive and regularly updated list of all classes being taught, which professors are teaching each course, and the names of all assigned Course Trackers are included on this website.
+            Note: This website includes the names of all assigned course trackers, a fully comprehensive and regularly updated list of all classes being taught, and which professors are teaching each course.
           </p>
         </div>
       </div>
@@ -140,12 +192,12 @@
             Our Story
           </h3>
           <p class="text-gray-500 mb-6">
-            The community was founded on August 24th, 2020. It was a time of uncertainty for everyone. Many were sad and upset at the lack of socializing and the college experience they were looking forward to due to the transition of being from in-person to online. It was during this time that the community founder decided to bring together the students within his CS classes using Discord as a service. In doing so, he created a small haven which has expanded over the years to become the large community we are today. Even with the transition back to in-person education, the community continues to thrive on Discord, now expanding to different majors under College of Engineering, and using Trackers as a key resources for networking and professional growth purposes.
+            The community was founded on August 24th, 2020. It was a time of uncertainty for everyone. Due to covid and the transition from in-person to online instruction, many students were sad and upset at the lack of socializing, and the nonexistent college experience. It was during this time that Leland Moy, a student dedicated to enhancing his college experience, decided to bring together the students in his CS classes via Discord. In doing so, he created a small haven which has developed over the years to become the  expansive community that we have today. With the transition back to in-person teaching, the community continues to thrive on Discord, now expanding to different majors under the College of Engineering. Trackers has now become a key resource for students in networking and professional growth.
           </p>
         </div>
       </div>
-
-      <div class="flex flex-wrap mb-12">
+      
+      <!-- <div class="flex flex-wrap mb-12">
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
           <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg">
             <img
@@ -166,14 +218,6 @@
           <p class="text-gray-500 mb-6">
             At Trackers, we push our members forward to their limits while supporting them to a brighter future. We strive to grow our members by providing up to date resources regarding the courses they are taking and the ability to stay connected with the community both online and offline. This is a place for every member to academically grow and meet others with similar majors and interests.
           </p>
-          <!-- <p class="text-gray-500 mb-6">
-            Interact with the community more actively by joining or hosting events. These events can be meetups, study
-            sessions, coding workshops, resume reviews, job search preps, and more!
-          </p>
-          <p class="text-gray-500 mb-6">
-            View upcoming events here or on the Discord server. Join our email list to receive updates about new events
-            and times.
-          </p> -->
         </div>
       </div>
 
@@ -198,20 +242,8 @@
           <p class="text-gray-500 mb-6">
             At Trackers, we wish to provide support to every member's professional career with our infrastructure. Built and designed by our team, we strive to be able to showcase our member's both creative and technical skills to our partners.
           </p>
-          <!-- <p class="text-gray-500 mb-6">
-            Active community members taking classes right along side you who keep everything in the class up to date and
-            organized for you. Community Tracker Mods send announcements for new homework, incoming due dates, and
-            grades being released. These community members also make sure every chat is open and welcoming to everyone
-            and academic honesty is followed at all times. Never miss a homework assignment ever again!
-          </p>
-          <p class="text-gray-500">
-            A fully comprehensive and regularly updated list of all classes being taught, which professors are teaching
-            each course, and the amount and names of all assigned tracker mods is included on this website. Apply to
-            become a Community Tracker Mod today and help fellow classmates and yourself with course workloads and
-            recommend this community to others!
-          </p> -->
         </div>
-      </div>
+      </div> -->
 
       <hr>
 

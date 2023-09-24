@@ -11,6 +11,7 @@ const {
   getAuthenticatedUser,
   getUserDetails,
   googleOAuth,
+  subscribeUser,
   // deleteUser,
   // uploadImage
 } = require("./handlers/users");
@@ -25,6 +26,7 @@ app.post("/login", login);
 app.get("/user", FBAuth, getAuthenticatedUser);
 app.post("/user", FBAuth, addUserDetails);
 app.get("/user/:handle", FBAuth, getUserDetails);
+app.put("/user/subscribe", FBAuth, subscribeUser);
 // app.delete('/user', FBAuth, deleteUser);
 // app.post('/user/image', FBAuth, uploadImage);
 
@@ -33,7 +35,7 @@ app.get("/team", getTeamDetails);
 app.get("/calendar", getEvents);
 app.get("/calendar/upcoming", getUpcomingEvents);
 
-// app.get("/discord/test", retrieveAvatars);
+app.get("/discord/test", retrieveAvatars);
 
 app.post("/auth/google", googleOAuth);
 

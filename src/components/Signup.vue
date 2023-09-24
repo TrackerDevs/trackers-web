@@ -68,6 +68,7 @@
               <div class="mb-3">
                 <button
                   :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition-all duration-300 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
+                  :disabled="uiStore.loading"
                   @click.prevent="signUp"
                 >
                   Sign up
@@ -95,6 +96,7 @@
 
                 <button
                   :class="`px-7 py-3 text-white leading-snug rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3 bg-blue-900 ${uiStore.loading ? 'opacity-50 cursor-not-allowed' : 'hover:cursor-pointer'}`"
+                  :disabled="uiStore.loading"
                   @click.prevent="handleGoogleAuth"
                 >
                   <img

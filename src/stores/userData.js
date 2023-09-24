@@ -33,7 +33,11 @@ export const useUserDataStore = defineStore("userData", {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
 				await this.fetchUser();
 				uiStore.clearErrors();
-				router.push({ path: "/" });
+				
+				if (router.options.history.state.back === "/login" || router.options.history.state.back === "/signup")
+					router.push({ path: "/" });
+				else
+					router.go(-1);
 			} catch (e) {
 				// console.log(e);
 				uiStore.setErrors(e.response.data);
@@ -48,7 +52,11 @@ export const useUserDataStore = defineStore("userData", {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
 				await this.fetchUser();
 				uiStore.clearErrors();
-				router.push({ path: "/" });
+
+				if (router.options.history.state.back === "/login" || router.options.history.state.back === "/signup")
+					router.push({ path: "/" });
+				else
+					router.go(-1);
 			} catch (e) {
 				// console.log(e);
 				uiStore.setErrors(e.response.data);
@@ -70,9 +78,24 @@ export const useUserDataStore = defineStore("userData", {
 				axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.refreshToken}`;
 				await this.fetchUser();
 				uiStore.clearErrors();
-				router.push({ path: "/" });
+
+				if (router.options.history.state.back === "/login" || router.options.history.state.back === "/signup")
+					router.push({ path: "/" });
+				else
+					router.go(-1);
 			} catch (e) {
 				// console.log(e);
+				uiStore.setErrors(e.response.data);
+			}
+		},
+		async subscribe () {
+			const uiStore = useUIStore();
+			try {
+				uiStore.loadingUI();
+				await axios.put("/user/subscribe");
+				await this.fetchUser();
+				uiStore.clearErrors();
+			} catch (e) {
 				uiStore.setErrors(e.response.data);
 			}
 		}

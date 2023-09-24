@@ -12,6 +12,7 @@ import Contact from "./components/Contact";
 import Events from "./components/Events";
 import Signup from "./components/Signup";
 import Support from "./components/Support";
+import Rsvp from "./components/Rsvp";
 import NotFoundComponent from "./components/404";
 import App from "./App";
 
@@ -27,7 +28,7 @@ const app = createApp(App);
 
 app.use(vue3GoogleLogin, {
 	clientId: "935833516033-47ej1juso2sihf7cu7h6jqict9vddnqj.apps.googleusercontent.com"
-})
+});
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
@@ -57,6 +58,7 @@ const routes = [
 	{ path: "/about/team", component: AboutTeam },
 	{ path: "/contact", component: Contact },
 	{ path: "/support", component: Support },
+	{ path: "/rsvp", component: Rsvp },
 
 	{ path: "/events", component: Events },
 

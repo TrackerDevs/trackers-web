@@ -79,7 +79,7 @@
             <div class="px-4 py-3 text-sm">
               <div>{{ userStore.user.credentials.username.stringValue }}</div>
             </div>
-            <ul class="py-2 text-sm">
+            <!-- <ul class="py-2 text-sm">
               <li>
                 <router-link
                   to="#"
@@ -96,7 +96,7 @@
                   Settings
                 </router-link>
               </li>
-            </ul>
+            </ul> -->
             <div class="py-2">
               <div
                 class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"

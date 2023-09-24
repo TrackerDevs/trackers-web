@@ -53,6 +53,7 @@ exports.signUp = async (req, res) => {
               imageUrl: {stringValue: data.photoUrl},
               status: {stringValue: ""},
               id: {stringValue: data.localId},
+              subscribed: {booleanValue: false},
               //   servers: {arrayValue: {values: []}},
               // last login date? (below?)
             },
@@ -198,6 +199,7 @@ exports.googleOAuth = async (req, res) => {
                 imageUrl: {stringValue: data.photoUrl},
                 status: {stringValue: ""},
                 id: {stringValue: data.localId},
+                subscribed: {booleanValue: false},
               // last login date? (below?)
               },
             },
@@ -232,4 +234,84 @@ exports.googleOAuth = async (req, res) => {
     // (get createdAt and lastLoginAt)
     return res.status(200).json({refreshToken});
   }
+};
+
+exports.subscribeUser = async (req, res) => {
+  const userData = {};
+  axios.defaults.headers.common["Authorization"] = `Bearer ${req.idToken}`;
+
+  const doc = await axios
+      .get(
+          `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/users/${req
+              .user.localId}`,
+      )
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  userData.credentials = doc.data.fields;
+  userData.credentials.userId = req.user.userId;
+
+  let fields = {subscribed: {booleanValue: !userData.credentials.subscribed.booleanValue}};
+  let mask = ["subscribed"];
+
+  await axios
+      .post(`https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents:commit`, {
+        writes: [
+          {
+            update: {
+              fields,
+              name: `projects/${config.projectId}/databases/(default)/documents/users/${userData.credentials.userId}`,
+            },
+            updateMask: {fieldPaths: mask},
+          },
+        ],
+      })
+      .catch((err) => {
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  const data = await axios
+      .get(
+          `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/mailingList/QOkVIUQZ9XI2JYWfcvD6`,
+      )
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+  const mailingList = data.data.fields;
+
+  fields = {};
+  mask = ["list"];
+
+  if (mailingList.list.arrayValue.values && mailingList.list.arrayValue.values
+      .map((id) => id.stringValue)
+      .includes(userData.credentials.userId)) {
+    fields["list"] = {arrayValue: {values:
+      mailingList.list.arrayValue.values.filter((id) => id.stringValue !== userData.credentials.userId),
+    }};
+  } else {
+    fields["list"] = {arrayValue: {values:
+      [...(mailingList.list.arrayValue.values ?? []), {stringValue: userData.credentials.userId}],
+    }};
+  }
+
+  await axios
+      .post(`https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents:commit`, {
+        writes: [
+          {
+            update: {
+              fields,
+              name: `projects/${config.projectId}/databases/(default)/documents/mailingList/QOkVIUQZ9XI2JYWfcvD6`,
+            },
+            updateMask: {fieldPaths: mask},
+          },
+        ],
+      })
+      .catch((err) => {
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  return res.status(200).json({message: "Details added successfully"});
 };
