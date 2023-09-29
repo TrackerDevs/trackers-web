@@ -21,13 +21,13 @@ export const useUIStore = defineStore("uiStore", {
         },
         async fetchMembers () {
 			try {
-                this.loading = true;
+				this.loading = true;
 				const res = await axios.get("/discord/members");
 				this.members = res.data;
-                this.loading = false;
+				this.loading = false;
 			} catch (e) {
 				console.log(e.response.data);
-                this.loading = false;
+				this.loading = false;
 			}
 		}
 	}
