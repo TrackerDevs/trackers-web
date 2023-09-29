@@ -19,7 +19,7 @@ const {
 const {getTeamDetails} = require("./handlers/team");
 const {getEvents, getUpcomingEvents} = require("./handlers/calendar");
 
-const {retrieveAvatars} = require("./discordApi");
+const {retrieveAvatars, retrieveMembers} = require("./discordApi");
 
 app.post("/signup", signUp);
 app.post("/login", login);
@@ -36,6 +36,7 @@ app.get("/calendar", getEvents);
 app.get("/calendar/upcoming", getUpcomingEvents);
 
 app.get("/discord/test", retrieveAvatars);
+app.get("/discord/members", retrieveMembers);
 
 app.post("/auth/google", googleOAuth);
 

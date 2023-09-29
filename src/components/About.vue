@@ -57,11 +57,12 @@
             Interact with the Trackers student organization by joining and actively participating in events. These events include social meetups, study sessions, coding workshops, resume reviews, networking events, and more!
           </p>
           <p class="text-gray-500 mb-6">
-            View upcoming events on this website or on the <a
-              href="https://discord.gg/xYW8hsesjt"
-              target="_blank"
+            View upcoming events on this website or on the <router-link
+              to="/hub"
               class="text-blue-600 font-bold underline decoration-transparent hover:decoration-current transition-all duration-300 ease-in-out"
-            >Discord server</a>.
+            >
+              Discord server
+            </router-link>.
           </p>
           <router-link to="/events">
             <button

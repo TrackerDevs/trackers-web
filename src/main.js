@@ -13,6 +13,7 @@ import Events from "./components/Events";
 import Signup from "./components/Signup";
 import Support from "./components/Support";
 import Rsvp from "./components/Rsvp";
+import Hub from "./components/Hub";
 import NotFoundComponent from "./components/404";
 import App from "./App";
 
@@ -59,6 +60,7 @@ const routes = [
 	{ path: "/contact", component: Contact },
 	{ path: "/support", component: Support },
 	{ path: "/rsvp", component: Rsvp },
+	{ path: "/hub", component: Hub },
 
 	{ path: "/events", component: Events },
 

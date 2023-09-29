@@ -1,9 +1,11 @@
 import { defineStore } from "pinia";
+import axios from "axios";
 
 export const useUIStore = defineStore("uiStore", {
 	state: () => ({
         loading: false,
-        errors: {}
+        errors: {},
+        members: {},
 	}),
 	actions: {
 		setErrors(e) {
@@ -16,6 +18,17 @@ export const useUIStore = defineStore("uiStore", {
         },
         loadingUI() {
             this.loading = true;
-        }
+        },
+        async fetchMembers () {
+			try {
+                this.loading = true;
+				const res = await axios.get("/discord/members");
+				this.members = res.data;
+                this.loading = false;
+			} catch (e) {
+				console.log(e.response.data);
+                this.loading = false;
+			}
+		}
 	}
 });

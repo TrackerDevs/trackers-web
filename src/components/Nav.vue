@@ -3,9 +3,8 @@
     <div :class="`relative bg-blue-700 ${atTop && useBanner ? 'h-10 py-2 visible' : 'h-0 invisible'} transition-all duration-700 ease-in-out`">
       <p class="font-bold text-white text-center text-sm">
         <span class="mr-2">Be a part of the community now!</span>
-        <a
-          href="https://discord.gg/xYW8hsesjt"
-          target="_blank"
+        <router-link
+          to="/hub"
           class="underline pl-2 inline-flex"
         >
           Join Discord Server
@@ -23,7 +22,7 @@
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
             />
           </svg>
-        </a>
+        </router-link>
       </p>
     </div>
     <div class="container max-w-7xl mx-auto sm:px-4 lg:px-8 py-4 flex items-center">
@@ -129,7 +128,7 @@ export default {
   props: {
     useBanner: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   setup() {

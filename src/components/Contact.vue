@@ -87,9 +87,8 @@
               <div class="m-2">
                 Message us directly in our Discord!
               </div>
-              <a
-                href="https://discord.gg/xYW8hsesjt"
-                target="_blank"
+              <router-link
+                to="/hub"
                 class="m-2 mx-auto"
               >
                 <button
@@ -97,7 +96,7 @@
                 >
                   Join here
                 </button>
-              </a>
+              </router-link>
             </div>
           </div>
           <img
