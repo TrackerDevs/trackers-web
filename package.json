@@ -2,7 +2,7 @@
 	"name": "trackers-web",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://trackerdevs.github.io/trackers-web",
+	"homepage": "https://trackers-web.com",
 	"proxy": "https://us-central1-cs-trackers.cloudfunctions.net/api",
 	"scripts": {
 		"serve": "vue-cli-service serve",
