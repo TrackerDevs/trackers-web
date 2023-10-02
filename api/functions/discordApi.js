@@ -100,11 +100,15 @@ exports.retrieveMembers = async (req, res) => {
 
   const resp = await axios.get(`https://discord.com/api/guilds/${guildId}?with_counts=true`)
       .catch((e) => {
+        delete axios.defaults.headers.common["Authorization"];
         return res.status(500).json({error: e.response.data});
       });
   const resp2 = await axios.get("https://discord.com/api/guilds/1070476456506949762?with_counts=true")
       .catch((e) => {
+        delete axios.defaults.headers.common["Authorization"];
         return res.status(500).json({error: e.response.data});
       });
+  delete axios.defaults.headers.common["Authorization"];
+
   return res.status(200).json({cs: {members: resp.data.approximate_member_count, online: resp.data.approximate_presence_count}, me: {members: resp2.data.approximate_member_count, online: resp2.data.approximate_presence_count}});
 };
