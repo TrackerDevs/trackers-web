@@ -881,10 +881,6 @@ video {
   margin-top: 1rem;
 }
 
-.mr-32 {
-  margin-right: 8rem;
-}
-
 .mt-\[8px\] {
   margin-top: 8px;
 }
@@ -2262,6 +2258,10 @@ video {
 
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mr-32 {
+    margin-right: 8rem;
   }
 
   .lg\:ml-8 {
