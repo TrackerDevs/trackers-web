@@ -35,18 +35,31 @@
             >
               <div
                 v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
-                :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
+                :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1 cursor-default`"
               >
-                <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 rounded-sm p-2`">
-                  <p class="font-bold">
-                    {{ event.info.name.stringValue }}
-                  </p>
-                  <p>
-                    Location: <span class="font-bold">{{ event.info.locationName.stringValue }}</span>
-                  </p>
-                  <p :class="`font-normal`">
-                    {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
-                  </p>
+                <div
+                  :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 rounded-sm p-2`"
+                >
+                  <div class="flex flex-row">
+                    <div class="mr-4">
+                      <p class="font-bold">
+                        {{ event.info.name.stringValue }}
+                      </p>
+                      <p>
+                        Location: <span class="font-bold">{{ event.info.locationName.stringValue }}</span>
+                      </p>
+                      <p :class="`font-normal`">
+                        {{ new Date(event.info.startTime.timestampValue).toLocaleTimeString() }} - {{ new
+                          Date(event.info.endTime.timestampValue).toLocaleTimeString() }}
+                      </p>
+                    </div>
+                    <button
+                      :class="`bg-${event.info.theme.stringValue}-600 hover:bg-${event.info.theme.stringValue}-500 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out inline-flex h-fit my-auto`"
+                      @click="modalFunc(event.info.id.stringValue)"
+                    >
+                      RSVP
+                    </button>
+                  </div>
                 </div>
               </div>
             </template>
@@ -88,6 +101,10 @@ export default {
     events: {
       type: Array,
       default: () => []
+    },
+    modalFunc: {
+      type: Function,
+      default: () => { }
     }
   },
   methods: {

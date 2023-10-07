@@ -3,7 +3,7 @@
     <Nav />
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="flex mx-auto mt-2 rounded-l-md w-full">
-        <div class="flex flex-wrap pt-24 w-full md:mx-32 lg:mx-[12rem]">
+        <div class="flex flex-wrap pt-16 w-full md:mx-32 lg:mx-[12rem]">
           <p class="font-bold mb-16 text-4xl">
             Join Trackers Discord
           </p>
@@ -73,7 +73,7 @@
                       class="block w-fit"
                     >
                       <p class="w-fit font-bold underline decoration-transparent hover:decoration-current transition-all duration-300 ease-in-out">
-                        ME Trackers @ UIC
+                        MIE Trackers @ UIC
                       </p>
                     </a>
                     <div

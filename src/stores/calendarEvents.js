@@ -1,10 +1,13 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
+import { useUIStore } from "./uiStore";
+
 export const useCalendarEventsStore = defineStore("calendarEvents", {
 	state: () => ({
 		events: [],
-		upcomingEvents: []
+		upcomingEvents: [],
+		event: {}
 	}),
 	actions: {
 		async fetchEvents () {
@@ -12,8 +15,24 @@ export const useCalendarEventsStore = defineStore("calendarEvents", {
 			this.events = res.data.events;
 		},
 		async fetchUpcomingEvents () {
-			const res = await axios.get("/calendar/upcoming");
+			const res = await axios.post("/calendar/upcoming");
 			this.upcomingEvents = res.data.events;
+		},
+		async getEvent(id) {
+			const res = await axios.get(`/calendar/${id}`);
+			this.event = res.data.event;
+		},
+		async rsvpEvent(id) {
+			const uiStore = useUIStore();
+			try {
+				uiStore.loadingUI();
+				await axios.post(`/calendar/rsvp`, { eventId: id });
+				const res = await axios.get(`/calendar/${id}`);
+				this.event = res.data.event;
+				uiStore.clearErrors();
+			} catch (e) {
+				uiStore.setErrors(e.response.data);
+			}
 		}
 	}
 });

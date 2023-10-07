@@ -61,7 +61,7 @@
               to="/hub"
               class="text-blue-600 font-bold underline decoration-transparent hover:decoration-current transition-all duration-300 ease-in-out"
             >
-              Discord server
+              <span>Discord server</span>
             </router-link>.
           </p>
           <router-link to="/events">

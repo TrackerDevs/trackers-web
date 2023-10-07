@@ -81,3 +81,61 @@ exports.getUpcomingEvents = async (req, res) => {
 
   return res.status(200).json({events});
 };
+
+exports.rsvpEvent = async (req, res) => {
+  const id = req.body.eventId;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${req.idToken}`;
+
+  const data = await axios
+      .get(
+          `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/calendar/${id}`,
+      )
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+  const mailingList = data.data.fields;
+
+  const fields = {};
+  const mask = ["rsvp"];
+
+  if (mailingList.rsvp.arrayValue.values && mailingList.rsvp.arrayValue.values
+      .map((id) => id.stringValue)
+      .includes(req.user.userId)) {
+    fields["rsvp"] = {arrayValue: {values:
+      mailingList.rsvp.arrayValue.values.filter((id) => id.stringValue !== req.user.userId),
+    }};
+  } else {
+    fields["rsvp"] = {arrayValue: {values:
+      [...(mailingList.rsvp.arrayValue.values ?? []), {stringValue: req.user.userId}],
+    }};
+  }
+
+  await axios
+      .post(`https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents:commit`, {
+        writes: [
+          {
+            update: {
+              fields,
+              name: `projects/${config.projectId}/databases/(default)/documents/calendar/${id}`,
+            },
+            updateMask: {fieldPaths: mask},
+          },
+        ],
+      })
+      .catch((err) => {
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  return res.status(200).json({message: "Details added successfully"});
+};
+
+exports.getEvent = async (req, res) => {
+  const docs = await axios
+      .get(`https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/calendar/${req.params.id}`)
+      .catch((err) => {
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  return res.status(200).json({event: docs.data.fields});
+};

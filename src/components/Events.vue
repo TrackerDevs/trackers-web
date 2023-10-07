@@ -69,7 +69,7 @@
                 <button
                   type="button"
                   class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 items-center p-1"
-                  @click="controllerUpdate(controllerMonth - 1)"
+                  @click="controllerUpdate(controllerMonth - 1); month = controllerMonth; year = controllerYear; day = 1; update()"
                 >
                   <svg
                     class="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -88,7 +88,7 @@
                 <button
                   type="button"
                   class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-red-100 p-1"
-                  @click="controllerUpdate(controllerMonth + 1)"
+                  @click="controllerUpdate(controllerMonth + 1); month = controllerMonth; year = controllerYear; day = 1; update()"
                 >
                   <svg
                     class="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -211,12 +211,24 @@
                 :day="day"
                 :days="[DAYS_FULL[dayName]]"
                 :events="store.events"
+                :modal-func="eventModal"
               />
             </div>
           </div>
         </div>
+        <EventModal
+          v-show="showModal"
+          :close-func="closeModal"
+          :event="store.event"
+          :rsvp-func="rsvpEvent"
+        />
       </div>
     </div>
+    <button
+      v-show="showModal"
+      tabindex="-1"
+      class="fixed w-full h-full inset-0 bg-white opacity-50 cursor-default"
+    />
   </div>
 </template>
 
@@ -225,6 +237,7 @@ import Nav from './Nav';
 import Month from "./Events/Month.vue";
 import Week from "./Events/Week.vue";
 import Day from "./Events/Day.vue";
+import EventModal from "./Events/EventModal.vue";
 import { useCalendarEventsStore } from '../stores/calendarEvents';
 export default {
   name: 'EventsComponent',
@@ -232,7 +245,8 @@ export default {
     Nav,
     Month,
     Week,
-    Day
+    Day,
+    EventModal
   },
   setup() {
     const store = useCalendarEventsStore();
@@ -263,6 +277,8 @@ export default {
       controllerStartPadding: [],
       controllerDaysInMonth: [],
       controllerEndPadding: [],
+
+      showModal: false
     }
   },
   mounted() {
@@ -277,6 +293,9 @@ export default {
     this.update();
     this.controllerUpdate(this.controllerMonth);
 
+    if (this.$route.params.id) {
+      this.eventModal(this.$route.params.id);
+    }
     return {};
   },
   methods: {
@@ -367,6 +386,19 @@ export default {
       this.type = 2;
       this.day = date;
       this.update();
+    },
+    eventModal(id) {
+      history.pushState({}, null, `/events/${id}`);
+      this.showModal = true;
+      this.store.getEvent(id);
+    },
+    closeModal() {
+      history.pushState({}, null, `/events`);
+      this.store.event = {};
+      this.showModal = false;
+    },
+    rsvpEvent(id) {
+      this.store.rsvpEvent(id);
     }
   }
 }

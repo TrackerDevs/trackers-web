@@ -63,6 +63,7 @@ const routes = [
 	{ path: "/hub", component: Hub },
 
 	{ path: "/events", component: Events },
+	{ path: "/events/:id", component: Events },
 
 	{ path: "/:pathMatch(.*)", component: NotFoundComponent }
 ];

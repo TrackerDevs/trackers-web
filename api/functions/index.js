@@ -17,7 +17,7 @@ const {
 } = require("./handlers/users");
 
 const {getTeamDetails} = require("./handlers/team");
-const {getEvents, getUpcomingEvents} = require("./handlers/calendar");
+const {getEvents, getUpcomingEvents, rsvpEvent, getEvent} = require("./handlers/calendar");
 
 const {retrieveAvatars, retrieveMembers} = require("./discordApi");
 
@@ -33,7 +33,9 @@ app.put("/user/subscribe", FBAuth, subscribeUser);
 app.get("/team", getTeamDetails);
 
 app.get("/calendar", getEvents);
-app.get("/calendar/upcoming", getUpcomingEvents);
+app.get("/calendar/:id", getEvent);
+app.post("/calendar/upcoming", getUpcomingEvents);
+app.post("/calendar/rsvp", FBAuth, rsvpEvent);
 
 app.get("/discord/test", retrieveAvatars);
 app.get("/discord/members", retrieveMembers);
