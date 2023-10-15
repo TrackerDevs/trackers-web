@@ -39,6 +39,7 @@ exports.retrieveAvatars = async (req, res) => {
         if (a.info.tag && a.info.tag.stringValue !== "") {
           const resp = await axios.get(`https://discord.com/api/guilds/${guildId}/members/search?query=${a.info.tag.stringValue}`)
               .catch((e) => {
+                delete axios.defaults.headers.common["Authorization"];
                 return res.status(500).json({error: e.response.data});
               });
           return `https://cdn.discordapp.com/avatars/${resp.data[0].user.id}/${resp.data[0].user.avatar}.png`;
@@ -86,6 +87,7 @@ exports.retrieveAvatars = async (req, res) => {
               ],
             })
             .catch((err) => {
+              delete axios.defaults.headers.common["Authorization"];
               return res.status(500).json({error: err.response.data.error.message});
             });
       }),

@@ -7,7 +7,7 @@
         :key="dayName"
       >
         <div
-          class="py-2 text-gray-600 text-sm uppercase tracking-wide font-bold justify-center text-center border-r border-b"
+          class="py-2 text-gray-600 dark:text-[#cdc8c2] text-sm uppercase tracking-wide font-bold justify-center text-center border-r border-b dark:border-[#363b3d]"
         >
           <p>
             {{ dayName }}
@@ -20,18 +20,18 @@
         v-for="padding in startPadding"
         :key="padding"
       >
-        <div class="text-center border-r border-b border-gray-300 bg-gray-200" />
+        <div class="text-center border-r border-b border-gray-300 dark:border-[#363b3d] bg-gray-200 dark:bg-[#25282a]" />
       </template>
       <template
         v-for="dayNum in daysInWeek"
         :key="dayNum"
       >
         <div
-          :class="`relative overflow-auto border-r border-b bg-gray-100 transition ease-in-out duration-100 hover:bg-blue-200 ${isSelected(dayNum) ? 'border border-blue-500' : ''}`"
+          :class="`relative overflow-auto border-r border-b dark:border-[#363b3d] bg-gray-100 dark:bg-[#1e2022] transition ease-in-out duration-100 hover:bg-blue-200 dark:hover:bg-blue-900 ${isSelected(dayNum) ? 'border border-blue-500 dark:border-blue-500' : ''}`"
           @click="gotoFunc(dayNum)"
         >
           <div
-            :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
+            :class="`inline-flex w-6 h-6 items-center justify-center cursor-default text-center leading-none text-gray-700 dark:text-[#cdc8c2] ${isToday(dayNum) ? 'text-white bg-red-500 rounded-full' : ''}`"
           >
             {{ dayNum }}
           </div>
@@ -44,7 +44,7 @@
                 v-if="containsEvent(dayNum, event.info.startTime.timestampValue, event.info.endTime.timestampValue)"
                 :class="`bg-${event.info.theme.stringValue}-600 mt-2 mx-2 rounded-md pl-1`"
               >
-                <div :class="`bg-${event.info.theme.stringValue}-50 text-${event.info.theme.stringValue}-600 rounded-sm p-2`">
+                <div :class="`bg-${event.info.theme.stringValue}-50 dark:bg-[#1b1d1e] text-${event.info.theme.stringValue}-600 rounded-sm p-2`">
                   <p class="font-bold">
                     {{ event.info.name.stringValue }}
                   </p>
@@ -64,7 +64,7 @@
         v-for="padding in endPadding"
         :key="padding"
       >
-        <div class="text-center border-r border-b border-gray-300 bg-gray-200" />
+        <div class="text-center border-r border-b border-gray-300 dark:border-[#363b3d] bg-gray-200 dark:bg-[#25282a]" />
       </template>
     </div>
   </div>

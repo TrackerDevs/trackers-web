@@ -11,15 +11,15 @@
     >
       <div
         v-if="event.name"
-        class="relative bg-white rounded-lg shadow w-1/2 mx-auto my-auto dark:bg-gray-700"
+        class="relative bg-white dark:bg-[#1b1d1e] rounded-lg shadow w-1/2 mx-auto my-auto"
       >
-        <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+        <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-[#363b3d]">
           <h3 :class="`text-xl font-semibold text-${event.theme.stringValue}-600`">
             {{ event.name.stringValue }}
           </h3>
           <button
             type="button"
-            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white"
             @click.prevent="closeFunc"
           >
             <svg
@@ -43,7 +43,7 @@
         <!-- Modal body -->
         <div class="p-6 space-y-6">
           <div
-            :class="`bg-${event.theme.stringValue}-50 text-${event.theme.stringValue}-600 rounded-sm p-2`"
+            :class="`bg-${event.theme.stringValue}-50 dark:bg-[#181a1b] text-${event.theme.stringValue}-600 rounded-sm p-2`"
           >
             <div class="flex flex-row items-center justify-center">
               <div class="mr-4">

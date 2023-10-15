@@ -7,7 +7,7 @@
           <p class="font-bold mb-16 text-4xl">
             Join Trackers Discord
           </p>
-          <div class="flex flex-wrap mb-16 h-64 w-full bg-stone-900 text-white shadow-lg">
+          <div class="flex flex-wrap mb-16 h-64 w-full bg-gray-900 text-white shadow-lg">
             <div class="w-full flex flex-col">
               <div class="w-full h-[40%] background-img" />
               <div class="h-[60%] w-full flex flex-wrap items-center justify-center">
@@ -56,7 +56,7 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap mb-16 h-64 w-full bg-stone-900 text-white shadow-lg">
+          <div class="flex flex-wrap mb-16 h-64 w-full bg-gray-900 text-white shadow-lg">
             <div class="w-full flex flex-col">
               <div class="w-full h-[40%] background-img2" />
               <div class="h-[60%] w-full flex flex-wrap items-center justify-center">

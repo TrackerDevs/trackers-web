@@ -4,16 +4,16 @@
     <Nav :use-banner="false" />
     <div class="flex pt-[72px]">
       <div class="flex flex-col w-full h-[calc(100vh-72px)]">
-        <div class="border-b py-2">
+        <div class="border-b dark:border-[#363b3d] py-2">
           <div class="flex flex-row w-[85%] items-center mx-auto">
-            <p class="text-gray-800 font-bold text-xl lg:w-[19rem] md:w-32">
+            <p class="text-gray-800 dark:text-[#cdc8c2] font-bold text-xl lg:w-[19rem] md:w-32">
               {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
             </p>
             <div class="mr-auto ml-2 relative">
               <form>
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
-                    class="w-4 h-4 text-gray-500"
+                    class="w-4 h-4 text-zinc-500"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -31,7 +31,7 @@
                 <input
                   id="default-search"
                   type="search"
-                  class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-red-400"
+                  class="block w-full p-2 pl-10 text-sm text-gray-900 dark:text-[#cdc8c2] bg-white dark:bg-[#181a1b] border border-gray-300 dark:border-[#3c4143] rounded-lg bg-gray-50 focus:ring-0 dark:placeholder:text-[#63615d] focus:outline-none focus:border-red-400 dark:focus:border-red-600"
                   placeholder="Search"
                   required
                 >
@@ -39,19 +39,19 @@
             </div>
             <div>
               <button
-                :class="`${type === 2 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                :class="`${type === 2 ? 'bg-red-50 dark:bg-[#2a0000] hover:bg-red-100 dark:hover:bg-[#450a0a] text-red-500' : 'bg-gray-100 dark:bg-[#181a1b] hover:bg-red-100 dark:hover:bg-[#2a0000] text-gray-600 dark:text-[#cdc8c2]'} font-bold rounded py-1 px-4 mx-2`"
                 @click="type = 2"
               >
                 Day
               </button>
               <button
-                :class="`${type === 1 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                :class="`${type === 1 ? 'bg-red-50 dark:bg-[#2a0000] hover:bg-red-100 dark:hover:bg-[#450a0a] text-red-500' : 'bg-gray-100 dark:bg-[#181a1b] hover:bg-red-100 dark:hover:bg-[#2a0000] text-gray-600 dark:text-[#cdc8c2]'} font-bold rounded py-1 px-4 mx-2`"
                 @click="type = 1"
               >
                 Week
               </button>
               <button
-                :class="`${type === 0 ? 'bg-red-50 hover:bg-red-100 text-red-500' : 'bg-gray-100 hover:bg-red-100 text-gray-600'} font-bold rounded py-1 px-4 mx-2`"
+                :class="`${type === 0 ? 'bg-red-50 dark:bg-[#2a0000] hover:bg-red-100 dark:hover:bg-[#450a0a] text-red-500' : 'bg-gray-100 dark:bg-[#181a1b] hover:bg-red-100 dark:hover:bg-[#2a0000] text-gray-600 dark:text-[#cdc8c2]'} font-bold rounded py-1 px-4 mx-2`"
                 @click="type = 0"
               >
                 Month
@@ -59,20 +59,20 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row w-full h-full border-l">
-          <div class="flex flex-col w-2/5 h-full border-r border-b">
+        <div class="flex flex-row w-full h-full border-l dark:border-[#363b3d]">
+          <div class="flex flex-col w-2/5 h-full border-r border-b dark:border-[#363b3d]">
             <div class="flex flex-row items-center justify-between py-2 w-[80%] mx-auto">
-              <p class="text-gray-800 mr-auto font-bold">
+              <p class="text-gray-800 dark:text-[#cdc8c2] mr-auto font-bold">
                 {{ MONTH_NAMES[controllerMonth] }} {{ controllerYear }}
               </p>
               <div class="rounded-lg pt-[2px]">
                 <button
                   type="button"
-                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 items-center p-1"
-                  @click="controllerUpdate(controllerMonth - 1); month = controllerMonth; year = controllerYear; day = 1; update()"
+                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-red-100 dark:hover:bg-[#2a0000] items-center p-1"
+                  @click="controllerUpdate(controllerMonth - 1); month = controllerMonth; year = controllerYear; day = 1; type = 0; update()"
                 >
                   <svg
-                    class="h-6 w-6 text-gray-500 inline-flex leading-none"
+                    class="h-6 w-6 text-zinc-500 inline-flex leading-none"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -87,8 +87,8 @@
                 </button>
                 <button
                   type="button"
-                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-red-100 p-1"
-                  @click="controllerUpdate(controllerMonth + 1); month = controllerMonth; year = controllerYear; day = 1; update()"
+                  class="leading-none rounded-lg transition ease-in-out duration-100 inline-flex items-center cursor-pointer hover:bg-red-100 dark:hover:bg-[#2a0000] p-1"
+                  @click="controllerUpdate(controllerMonth + 1); month = controllerMonth; year = controllerYear; day = 1; type = 0; update()"
                 >
                   <svg
                     class="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -112,7 +112,7 @@
                   v-for="_dayName in DAYS"
                   :key="_dayName"
                 >
-                  <div class="py-2 text-gray-600 text-sm tracking-wide font-bold justify-center text-center">
+                  <div class="py-2 text-gray-600 dark:text-[#cdc8c2] text-sm tracking-wide font-bold justify-center text-center">
                     {{ _dayName }}
                   </div>
                 </template>
@@ -133,7 +133,7 @@
                     @click="month = controllerMonth; year = controllerYear; day = dayNum; update()"
                   >
                     <p
-                      :class="`flex items-center justify-center w-6 h-6 text-gray-700 rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 text-white group-hover:bg-red-800' : 'group-hover:bg-blue-200'} ${controllerIsSelected(dayNum) ? 'border border-blue-500' : ''}`"
+                      :class="`flex items-center justify-center w-6 h-6 text-gray-700 dark:text-[#cdc8c2] rounded-full transition ease-in-out duration-100 ${controllerIsToday(dayNum) ? 'bg-red-500 dark:bg-red-800 text-white group-hover:bg-red-800 dark:group-hover:bg-red-600' : 'group-hover:bg-blue-200 dark:group-hover:bg-blue-800'} ${controllerIsSelected(dayNum) ? 'border border-blue-500' : ''}`"
                     >
                       {{ dayNum }}
                     </p>
@@ -147,8 +147,8 @@
                 </template>
               </div>
             </div>
-            <div class="relative overflow-auto h-full border-t mt-4 p-4">
-              <div class="text-gray-800 font-bold ml-4">
+            <div class="relative overflow-auto h-full border-t dark:border-[#363b3d] mt-4 p-4">
+              <div class="text-gray-800 dark:text-[#cdc8c2] font-bold ml-4">
                 Upcoming events
               </div>
               <div class="absolute left-6">
@@ -167,7 +167,7 @@
                   >
                     <div :class="`min-w-[4px] bg-${event.info.theme.stringValue}-600 m-2 rounded-md`" />
                     <div
-                      :class="`text-gray-800 rounded-sm p-2`"
+                      :class="`text-gray-800 dark:text-[#cdc8c2] rounded-sm p-2`"
                     >
                       {{ event.info.name.stringValue }} - {{ new Date(event.info.startTime.timestampValue).toLocaleString() }}
                     </div>
@@ -177,7 +177,7 @@
             </div>
           </div>
           <div class="w-full h-full mx-4 pb-4">
-            <div class="w-full h-full border-l">
+            <div class="w-full h-full border-l dark:border-[#363b3d]">
               <Month
                 v-if="type === 0"
                 :start-padding="startPadding"
@@ -227,7 +227,7 @@
     <button
       v-show="showModal"
       tabindex="-1"
-      class="fixed w-full h-full inset-0 bg-white opacity-50 cursor-default"
+      class="fixed w-full h-full inset-0 bg-white dark:bg-black opacity-50 cursor-default"
     />
   </div>
 </template>

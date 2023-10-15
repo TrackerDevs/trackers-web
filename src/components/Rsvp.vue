@@ -2,7 +2,7 @@
   <div class="font-roboto bg-gray-50">
     <Nav />
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
-      <div class="flex mx-auto mt-2 rounded-l-md bg-white w-full">
+      <div class="flex mx-auto mt-2 rounded-md bg-white dark:bg-[#181a1b] w-full">
         <div class="flex flex-wrap content-center justify-center w-full mx-16 md:mx-32 lg:mx-64">
           <div>
             <p class="font-bold text-4xl">

@@ -3,7 +3,7 @@
     <Nav />
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="flex mx-auto mt-16">
-        <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white w-[24rem] h-[36rem] sm:w-[32rem]">
+        <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white dark:bg-[#181a1b] w-[24rem] h-[36rem] sm:w-[32rem]">
           <div class="w-96 px-4">
             <!-- Heading -->
             <h1 class="text-xl font-semibold">
@@ -18,7 +18,7 @@
                 <input
                   v-model="name"
                   type="text"
-                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.username || uiStore.errors.error ? `border-red-500` : ``}`"
+                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 dark:text-[#cdc8c2] bg-white dark:bg-[#181a1b] bg-clip-padding border border-solid border-gray-300 dark:border-[#3c4143] rounded transition ease-in-out m-0 focus:text-gray-700 dark:placeholder:text-[#63615d] focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.username || uiStore.errors.error ? `border-red-500 dark:border-red-500` : ``}`"
                   placeholder="Full name"
                 >
                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -31,7 +31,7 @@
                 <input
                   v-model="email"
                   type="text"
-                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.email || uiStore.errors.error ? `border-red-500` : ``}`"
+                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 dark:text-[#cdc8c2] bg-white dark:bg-[#181a1b] bg-clip-padding border border-solid border-gray-300 dark:border-[#3c4143] rounded transition ease-in-out m-0 focus:text-gray-700 dark:placeholder:text-[#63615d] focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.email || uiStore.errors.error ? `border-red-500 dark:border-red-500` : ``}`"
                   placeholder="Email address"
                 >
                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -44,7 +44,7 @@
                 <input
                   v-model="password"
                   type="password"
-                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.password || uiStore.errors.error ? `border-red-500` : ``}`"
+                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 dark:text-[#cdc8c2] bg-white dark:bg-[#181a1b] bg-clip-padding border border-solid border-gray-300 dark:border-[#3c4143] rounded transition ease-in-out m-0 focus:text-gray-700 dark:placeholder:text-[#63615d] focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.password || uiStore.errors.error ? `border-red-500 dark:border-red-500` : ``}`"
                   placeholder="Password"
                 >
                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -57,7 +57,7 @@
                 <input
                   v-model="confirmPassword"
                   type="password"
-                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.confirmPassword || uiStore.errors.error ? `border-red-500` : ``}`"
+                  :class="`form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 dark:text-[#cdc8c2] bg-white dark:bg-[#181a1b] bg-clip-padding border border-solid border-gray-300 dark:border-[#3c4143] rounded transition ease-in-out m-0 focus:text-gray-700 dark:placeholder:text-[#63615d] focus:bg-white focus:border-blue-600 focus:outline-none ${uiStore.errors.confirmPassword || uiStore.errors.error ? `border-red-500 dark:border-red-500` : ``}`"
                   placeholder="Confirm password"
                 >
                 <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
@@ -87,7 +87,7 @@
                 </button>
 
                 <div
-                  class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
+                  class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 dark:before:border-[#363b3d] before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 dark:after:border-[#363b3d] after:mt-0.5"
                 >
                   <p class="text-center font-semibold mx-4 mb-0">
                     OR
@@ -124,7 +124,7 @@
               <span class="text-xs text-gray-400 font-semibold">Already have an account?</span>
               <router-link
                 to="/login"
-                class="text-xs font-semibold text-blue-700 p-1"
+                class="text-xs font-semibold text-blue-700 dark:text-[#5096e8] p-1"
               >
                 Login
               </router-link>

@@ -3,7 +3,7 @@
     <Nav />
     <div class="flex flex-col min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="mb-8 mt-10">
-        <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900">
+        <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900 dark:text-[#cdc8c2]">
           Everything you need to succeed
         </h1>
       </div>
@@ -66,7 +66,7 @@
           </p>
           <router-link to="/events">
             <button
-              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
+              class="bg-transparent hover:bg-blue-700 text-blue-900 dark:text-[#82afe4] font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
             >
               <p>View Events</p>
               <svg
@@ -90,7 +90,7 @@
           </p>
           <router-link to="/rsvp">
             <button
-              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
+              class="bg-transparent hover:bg-blue-700 text-blue-900 dark:text-[#82afe4] font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
             >
               <p>Subscribe to mailing list</p>
               <svg
@@ -141,7 +141,7 @@
             target="_blank"
           >
             <button
-              class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
+              class="bg-transparent hover:bg-blue-700 text-blue-900 dark:text-[#82afe4] font-semibold hover:text-white py-2 px-4 border border-blue-800 hover:border-transparent rounded transition duration-300 ease-in-out inline-flex mb-6"
             >
               <p>View Form</p>
               <svg
@@ -160,16 +160,16 @@
               </svg>
             </button>
           </a>
-          <p class="text-gray-500">
+          <!-- <p class="text-gray-500">
             Note: This website includes the names of all assigned course trackers, a fully comprehensive and regularly updated list of all classes being taught, and which professors are teaching each course.
-          </p>
+          </p> -->
         </div>
       </div>
       
-      <hr>
+      <hr class="dark:border-[#363b3d]">
 
       <div class="mb-8 mt-10">
-        <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900">
+        <h1 class="text-center mb-3 font-bold text-4xl leading-none text-slate-900 dark:text-[#cdc8c2]">
           About Trackers
         </h1>
       </div>
@@ -246,16 +246,16 @@
         </div>
       </div> -->
 
-      <hr>
+      <hr class="dark:border-[#363b3d]">
 
       <div class="flex mt-10 shadow w-full max-w-4xl mx-auto">
         <router-link
           to="/about/team"
           class="w-full"
         >
-          <button class="flex flex-row items-center justify-center group relative h-20 w-full bg-white text-lg">
+          <button class="flex flex-row items-center justify-center group relative h-20 w-full bg-white dark:bg-[#181a1b] text-lg">
             <div class="absolute inset-0 w-0 bg-blue-500 transition-all duration-[300ms] ease-out group-hover:w-full shadow-inner" />
-            <span class="relative text-black group-hover:text-white">Meet the Team</span>
+            <span class="relative text-black dark:text-white group-hover:text-white">Meet the Team</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

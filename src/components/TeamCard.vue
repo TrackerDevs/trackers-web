@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-12 lg:mb-0 shadow-lg">
+  <div class="mb-12 lg:mb-0 shadow-lg dark:text-[#cdc8c2] dark:bg-[#181a1b]">
     <img
       class="rounded-lg shadow-lg my-6 mx-auto"
       :src="image.stringValue"

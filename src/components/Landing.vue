@@ -2,17 +2,17 @@
 <template>
   <div class="font-roboto bg-gray-50">
     <Nav />
-    <div class="flex flex-col min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
+    <div class="flex flex-col min-h-screen pt-[113px] pb-16 px-4 sm:px-6 lg:px-8 dark:bg-[#1b1d1e]">
       <div class="mt-32 mb-16 h-[75vh]">
         <img
           class="h-16 mb-3 ml-auto mr-auto"
           src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo-2-trim.png?alt=media"
           alt="Trackers Logo"
         >
-        <h1 class="text-center mb-3 text-6xl leading-none text-slate-900">
+        <h1 class="text-center mb-3 text-6xl leading-none text-slate-900 dark:text-[#cdc8c2]">
           Trackers
         </h1>
-        <h1 class="text-center mb-3 text-2xl leading-none text-slate-900">
+        <h1 class="text-center mb-3 text-2xl leading-none text-slate-900 dark:text-[#cdc8c2]">
           Trackers was created during the midst of the global pandemic back in 2020 to connect computer science
           students who couldn't do so in person. Years later, Trackers has expanded to multiple majors within the College of Engineering and is still the most popular and active student
           forum for help at UIC. This is a place for every member to academically grow and meet others with similar majors and interests.
@@ -38,7 +38,7 @@
         </div>
       </div>
       
-      <hr>
+      <hr class="dark:border-[#363b3d]">
 
       <div class="my-10 mx-24">
         <h2 class="text-4xl font-medium mb-8">
@@ -62,17 +62,17 @@
                 {{ event.info.name.stringValue.toUpperCase().substring(0, 1) }}
               </div>
               <div
-                :class="`text-gray-600 font-medium p-2`"
+                :class="`text-gray-600 dark:text-[#b1aaa0] font-medium p-2`"
               >
                 {{ new Date(event.info.startTime.timestampValue).toDateString().toUpperCase().substring(3) }}
               </div>
               <div
-                :class="`text-gray-800 font-bold p-2`"
+                :class="`text-gray-800 dark:text-[#cdc8c2] font-bold p-2`"
               >
                 {{ event.info.name.stringValue }}
               </div>
               <div
-                :class="`text-gray-800`"
+                :class="`text-gray-800 dark:text-[#cdc8c2]`"
               >
                 Location: <span class="font-bold">{{ event.info.locationName.stringValue }}</span>
               </div>
@@ -81,16 +81,16 @@
         </div>
       </div>
 
-      <hr>
+      <hr class="dark:border-[#363b3d]">
 
-      <section class="mt-10 mb-32 text-gray-800 text-center">
+      <section class="mt-10 mb-32 text-gray-800 dark:text-[#cdc8c2] text-center">
         <h2 class="text-4xl font-bold mb-20">
           Why join?
         </h2>
 
         <div class="grid lg:gap-x-12 lg:grid-cols-3">
           <div class="mb-12 lg:mb-0">
-            <div class="rounded-lg shadow-lg h-full block bg-white">
+            <div class="rounded-lg shadow-lg h-full block bg-white dark:bg-[#181a1b]">
               <div class="flex justify-center">
                 <div class="p-4 bg-blue-900 rounded-full shadow-lg inline-block -mt-8">
                   <svg
@@ -125,7 +125,7 @@
           </div>
 
           <div class="mb-12 lg:mb-0">
-            <div class="rounded-lg shadow-lg h-full block bg-white">
+            <div class="rounded-lg shadow-lg h-full block bg-white dark:bg-[#181a1b]">
               <div class="flex justify-center">
                 <div class="p-4 bg-blue-900 rounded-full shadow-lg inline-block -mt-8">
                   <svg
@@ -147,9 +147,6 @@
                 <h5 class="text-lg font-medium mb-4">
                   Tracked Classes
                 </h5>
-                <!-- TODO FIXME
-                All years of experience are supported whether you're first or second year or undergraduate or graduate!
-                -->
                 <p class="text-gray-500">
                   All undergraduate courses are supported, from 100 level to 400 level.
                 </p>
@@ -158,7 +155,7 @@
           </div>
 
           <div class="">
-            <div class="rounded-lg shadow-lg h-full block bg-white">
+            <div class="rounded-lg shadow-lg h-full block bg-white dark:bg-[#181a1b]">
               <div class="flex justify-center">
                 <div class="p-4 bg-blue-900 rounded-full shadow-lg inline-block -mt-8">
                   <svg
@@ -235,20 +232,20 @@
       </section> -->
 
       <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
-        <div class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] h-[16rem] invisible sm:visible">
+        <div class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] invisible sm:visible">
           <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
           >
         </div>
 
-        <div class="flex flex-wrap bg-white w-[24rem] h-[16rem] sm:w-[32rem] divide-y">
+        <div class="flex flex-col w-[24rem] sm:w-[32rem]">
           <router-link
             to="/events"
             class="w-full"
           >
             <button
-              class="group relative h-[5.4rem] w-full overflow-hidden bg-white text-lg"
+              class="group relative h-[5.4rem] w-full overflow-hidden bg-white dark:bg-[#181a1b] text-lg"
               style="direction:rtl;"
             >
               <div
@@ -256,18 +253,18 @@
                 style="direction:ltr;"
               />
               <span
-                class="relative text-black group-hover:text-white"
+                class="relative text-black dark:text-[#cdc8c2] group-hover:text-white"
                 style="direction:ltr;"
               >Events</span>
             </button>
           </router-link>
-
+          <hr class="dark:border-[#363b3d]">
           <router-link
             to="/about"
             class="w-full"
           >
             <button
-              class="group relative h-[5.4rem] w-full overflow-hidden bg-white text-lg"
+              class="group relative h-[5.4rem] w-full overflow-hidden bg-white dark:bg-[#181a1b] text-lg"
               style="direction:rtl;"
             >
               <div
@@ -275,18 +272,18 @@
                 style="direction:ltr;"
               />
               <span
-                class="relative text-black group-hover:text-white"
+                class="relative text-black dark:text-[#cdc8c2] group-hover:text-white"
                 style="direction:ltr;"
               >About</span>
             </button>
           </router-link>
-
+          <hr class="dark:border-[#363b3d]">
           <router-link
             to="/about/team"
             class="w-full"
           >
             <button
-              class="group relative h-[5.3rem] w-full overflow-hidden bg-white text-lg"
+              class="group relative h-[5.3rem] w-full overflow-hidden bg-white dark:bg-[#181a1b] text-lg"
               style="direction:rtl;"
             >
               <div
@@ -294,7 +291,7 @@
                 style="direction:ltr;"
               />
               <span
-                class="relative text-black group-hover:text-white"
+                class="relative text-black dark:text-[#cdc8c2] group-hover:text-white"
                 style="direction:ltr;"
               >The Team</span>
             </button>

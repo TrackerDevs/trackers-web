@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed w-full z-10 top-0 bg-gray-50">
+  <nav class="fixed w-full z-10 top-0 bg-gray-50 dark:bg-[#1b1d1e]">
     <div :class="`relative bg-blue-700 ${atTop && useBanner ? 'h-10 py-2 visible' : 'h-0 invisible'} transition-all duration-700 ease-in-out`">
       <p class="font-bold text-white text-center text-sm">
         <span class="mr-2">Be a part of the community now!</span>
@@ -48,7 +48,48 @@
       </div>
 
       <div class="flex space-x-4 ml-auto">
-        <div v-if="!userStore.authenticated && !userStore.loading">
+        <div class="flex justify-content items-center">
+          <button
+            class="bg-transparent h-fit text-blue-900 px-2 py-2 border border-blue-800 dark:border-[#1c3ca5] rounded-full transition duration-300 ease-in-out inline-flex justify-center items-center"
+            @click="toggleTheme"
+          >
+            <svg
+              v-if="isDarkMode"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#82afe4"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              />
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="dark:border-[#363b3d] border-r h-10" />
+        <div
+          v-if="!userStore.authenticated && !userStore.loading"
+          class="flex justify-center items-center"
+        >
           <router-link
             to="/login"
             class="mr-2"
@@ -73,7 +114,7 @@
           <!-- Dropdown menu -->
           <div
             v-show="show"
-            class="absolute right-0 top-12 z-10 bg-white divide-y rounded-lg shadow w-44"
+            class="absolute right-0 top-12 z-10 bg-white dark:bg-[#181a1b] rounded-lg shadow w-44"
           >
             <div class="px-4 py-3 text-sm">
               <div>{{ userStore.user.credentials.username.stringValue }}</div>
@@ -96,9 +137,10 @@
                 </router-link>
               </li>
             </ul> -->
+            <hr class="dark:border-[#363b3d]">
             <div class="py-2">
               <div
-                class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-800 cursor-pointer"
                 @click.prevent="logout"
               >
                 Sign out
@@ -117,7 +159,7 @@
         </div>
       </div>
     </div>
-    <hr :class="`${atTop ? 'opacity-0' : 'opacity-100'} transition-all duration-300 ease-in-out`">
+    <hr :class="`${atTop ? 'opacity-0' : 'opacity-100'} transition-all duration-300 ease-in-out dark:border-[#363b3d]`">
   </nav>
 </template>
     
@@ -140,7 +182,8 @@ export default {
       hideBanner: this.useBanner ? 100 : 0,
       bannerHeight: this.useBanner ? 'block' : 'none',
       show: false,
-      atTop: true
+      atTop: true,
+      isDarkMode: localStorage.theme === 'dark'
     }
   },
   created() {
@@ -172,6 +215,17 @@ export default {
     },
     logout() {
       this.userStore.logoutUser(this.$router);
+    },
+    toggleTheme() {
+      if (localStorage.theme === 'dark') {
+        localStorage.theme = 'light';
+        document.documentElement.classList.remove('dark');
+        this.isDarkMode = false;
+      } else {
+        localStorage.theme = 'dark';
+        document.documentElement.classList.add('dark');
+        this.isDarkMode = true;
+      }
     }
   },
 }
