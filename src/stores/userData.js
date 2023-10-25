@@ -9,7 +9,8 @@ export const useUserDataStore = defineStore("userData", {
 		loading: false,
 		authenticated: false,
 		errors: {},
-		user: {}
+		user: {},
+		mailingList: []
 	}),
 	actions: {
 		async fetchUser () {
@@ -67,6 +68,7 @@ export const useUserDataStore = defineStore("userData", {
 			localStorage.removeItem("userData");
 			delete axios.defaults.headers.common["Authorization"];
 			this.authenticated = false;
+			this.user = {};
 			router.go();
 		},
 		async loginUserGoogle (code, router) {
@@ -98,6 +100,10 @@ export const useUserDataStore = defineStore("userData", {
 			} catch (e) {
 				uiStore.setErrors(e.response.data);
 			}
+		},
+		async fetchMailingList () {
+			const res = await axios.get("/mailingList");
+			this.mailingList = res.data.mailingList;
 		}
 	}
 });

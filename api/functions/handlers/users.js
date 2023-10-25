@@ -315,3 +315,48 @@ exports.subscribeUser = async (req, res) => {
 
   return res.status(200).json({message: "Details added successfully"});
 };
+
+exports.getMailingList = async (req, res) => {
+  const userData = {};
+  axios.defaults.headers.common["Authorization"] = `Bearer ${req.idToken}`;
+
+  const doc = await axios
+      .get(
+          `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/users/${req
+              .user.localId}`,
+      )
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+
+  userData.credentials = doc.data.fields;
+  userData.credentials.userId = req.user.userId;
+  if (!userData.credentials.admin || !userData.credentials.admin.booleanValue) {
+    delete axios.defaults.headers.common["Authorization"];
+    return res.status(403).json({error: "Unauthorized"});
+  }
+
+  const data = await axios
+      .get(
+          `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/mailingList/QOkVIUQZ9XI2JYWfcvD6`,
+      )
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).json({error: err.response.data.error.message});
+      });
+  let mailingList = data.data.fields.list;
+
+  mailingList = await Promise.all(mailingList.arrayValue.values.map(async (a) => {
+    const doc = await axios
+        .get(
+            `https://firestore.googleapis.com/v1/projects/${config.projectId}/databases/(default)/documents/users/${a.stringValue}`,
+        )
+        .catch((err) => {
+          return res.status(500).json({error: err.response.data.error.message});
+        });
+    return doc.data.fields;
+  }));
+
+  return res.status(200).json({mailingList});
+};

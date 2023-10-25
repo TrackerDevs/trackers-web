@@ -14,6 +14,10 @@ export const useCalendarEventsStore = defineStore("calendarEvents", {
 			const res = await axios.get("/calendar");
 			this.events = res.data.events;
 		},
+		async fetchEventsAdmin () {
+			const res = await axios.get("/calendarAdmin");
+			this.events = res.data.events;
+		},
 		async fetchUpcomingEvents () {
 			const res = await axios.post("/calendar/upcoming");
 			this.upcomingEvents = res.data.events;

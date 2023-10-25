@@ -3,7 +3,7 @@
   <div class="font-roboto bg-gray-50">
     <Nav />
     <div class="flex flex-col min-h-screen pt-[113px] pb-16 px-4 sm:px-6 lg:px-8 dark:bg-[#1b1d1e]">
-      <div class="mt-32 mb-16 h-[75vh]">
+      <div class="mt-32 mb-16 min-h-[75vh]">
         <img
           class="h-16 mb-3 ml-auto mr-auto"
           src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo-2-trim.png?alt=media"
@@ -17,19 +17,25 @@
           students who couldn't do so in person. Years later, Trackers has expanded to multiple majors within the College of Engineering and is still the most popular and active student
           forum for help at UIC. This is a place for every member to academically grow and meet others with similar majors and interests.
         </h1>
-        <div class="text-center mt-8 space-y-6">
-          <router-link to="/hub">
+        <div class="text-center mt-8 flex flex-wrap items-center justify-center">
+          <router-link
+            to="/hub"
+            class="m-4"
+          >
             <button
               type="button"
-              class="inline-block mr-16 px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              class="px-7 py-3 bg-blue-900 text-white font-medium text-sm uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               Join the Discord
             </button>
           </router-link>
-          <router-link to="/signup">
+          <router-link
+            to="/signup"
+            class="m-4"
+          >
             <button
               type="button"
-              class="inline-block px-7 py-3 bg-blue-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              class="px-7 py-3 bg-blue-900 text-white font-medium text-sm uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               Sign
               up for events
@@ -231,15 +237,15 @@
         </div>
       </section> -->
 
-      <div class="flex mx-auto mb-16 rounded-lg overflow-hidden shadow-lg">
-        <div class="flex flex-wrap content-center justify-center w-0 sm:w-[16rem] invisible sm:visible">
+      <div class="flex items-center justify-center mb-16">
+        <div class="rounded-l-lg overflow-hidden flex flex-wrap content-center justify-center w-0 sm:w-[16rem] invisible sm:visible">
           <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover"
             src="https://firebasestorage.googleapis.com/v0/b/cs-trackers.appspot.com/o/public%2Flogo.png?alt=media"
           >
         </div>
 
-        <div class="flex flex-col w-[24rem] sm:w-[32rem]">
+        <div class="rounded-l-lg rounded-r-lg sm:rounded-l-none overflow-hidden flex flex-col w-full sm:w-[24rem] sm:w-[32rem]">
           <router-link
             to="/events"
             class="w-full"

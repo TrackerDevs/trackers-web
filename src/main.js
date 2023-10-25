@@ -14,11 +14,13 @@ import Signup from "./components/Signup";
 import Support from "./components/Support";
 import Rsvp from "./components/Rsvp";
 import Hub from "./components/Hub";
+import Admin from "./components/Admin";
 import NotFoundComponent from "./components/404";
 import App from "./App";
 
 // import AuthRoute from "./util/AuthRoute";
 import UnAuthRoute from "./util/UnAuthRoute";
+import AdminRoute from "./util/AdminRoute";
 
 import axios from "axios";
 axios.defaults.baseURL = "https://us-central1-cs-trackers.cloudfunctions.net/api";
@@ -58,12 +60,14 @@ const routes = [
 	{ path: "/about", component: About },
 	{ path: "/about/team", component: AboutTeam },
 	{ path: "/contact", component: Contact },
-	{ path: "/support", component: Support },
+	{ path: "/support", component: Support, beforeEnter: [ AdminRoute ] },
 	{ path: "/rsvp", component: Rsvp },
 	{ path: "/hub", component: Hub },
 
 	{ path: "/events", component: Events },
 	{ path: "/events/:id", component: Events },
+
+	{ path: "/admin", component: Admin, beforeEnter: [ AdminRoute ] },
 
 	{ path: "/:pathMatch(.*)", component: NotFoundComponent }
 ];

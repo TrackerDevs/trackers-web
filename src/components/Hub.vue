@@ -2,7 +2,7 @@
   <div class="font-roboto bg-gray-50">
     <Nav />
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
-      <div class="flex mx-auto mt-2 rounded-l-md w-full">
+      <div class="flex mx-auto mt-2 w-full">
         <div class="flex flex-wrap pt-16 w-full md:mx-32 lg:mx-[12rem]">
           <p class="font-bold mb-16 text-4xl">
             Join Trackers Discord

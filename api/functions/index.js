@@ -12,12 +12,13 @@ const {
   getUserDetails,
   googleOAuth,
   subscribeUser,
+  getMailingList,
   // deleteUser,
   // uploadImage
 } = require("./handlers/users");
 
 const {getTeamDetails} = require("./handlers/team");
-const {getEvents, getUpcomingEvents, rsvpEvent, getEvent} = require("./handlers/calendar");
+const {getEvents, getEventsAdmin, getUpcomingEvents, rsvpEvent, getEvent} = require("./handlers/calendar");
 
 const {retrieveAvatars, retrieveMembers} = require("./discordApi");
 
@@ -27,12 +28,14 @@ app.get("/user", FBAuth, getAuthenticatedUser);
 app.post("/user", FBAuth, addUserDetails);
 app.get("/user/:handle", FBAuth, getUserDetails);
 app.put("/user/subscribe", FBAuth, subscribeUser);
+app.get("/mailingList", FBAuth, getMailingList);
 // app.delete('/user', FBAuth, deleteUser);
 // app.post('/user/image', FBAuth, uploadImage);
 
 app.get("/team", getTeamDetails);
 
 app.get("/calendar", getEvents);
+app.get("/calendarAdmin", FBAuth, getEventsAdmin);
 app.get("/calendar/:id", getEvent);
 app.post("/calendar/upcoming", getUpcomingEvents);
 app.post("/calendar/rsvp", FBAuth, rsvpEvent);

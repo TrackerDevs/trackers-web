@@ -3,8 +3,8 @@
     <Nav />
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="flex mx-auto mt-16">
-        <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white dark:bg-[#181a1b] w-[24rem] h-[36rem] sm:w-[32rem]">
-          <div class="w-96 px-4">
+        <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white dark:bg-[#181a1b] w-full min-h-[36rem] sm:w-[32rem]">
+          <div class="w-full mx-12">
             <!-- Heading -->
             <h1 class="text-xl font-semibold">
               Welcome to Trackers!
@@ -131,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap content-center justify-center rounded-r-md w-[16rem] h-[36rem] invisible sm:visible">
+        <div class="flex flex-wrap content-center justify-center rounded-r-md w-0 sm:w-[16rem] h-[36rem] invisible sm:visible">
           <span class="w-full h-full gradient" />
           <!-- <img
             class="w-full h-full bg-center bg-no-repeat object-cover bg-cover rounded-r-md"

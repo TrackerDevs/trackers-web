@@ -4,9 +4,9 @@
     <div class="flex min-h-screen pt-[113px] mb-16 mx-4 sm:mx-6 lg:mx-8">
       <div class="flex mx-auto mt-16">
         <div
-          class="flex flex-wrap content-center justify-center rounded-l-md bg-white dark:bg-[#181a1b] w-[24rem] h-[32rem] sm:w-[32rem]"
+          class="flex flex-wrap content-center justify-center rounded-l-md bg-white dark:bg-[#181a1b] w-full sm:w-[32rem] min-h-[32rem] sm:w-[32rem]"
         >
-          <div class="w-96 px-4">
+          <div class="w-full mx-12">
             <!-- Heading -->
             <h1 class="text-xl font-semibold">
               Welcome back
@@ -129,7 +129,7 @@
           </div>
         </div>
         <div 
-          class="flex flex-wrap content-center justify-center rounded-r-md w-[16rem] h-[32rem] invisible sm:visible"
+          class="flex flex-wrap content-center justify-center rounded-r-md w-0 sm:w-[16rem] h-[32rem] invisible sm:visible"
         >
           <span class="w-full h-full gradient" />
           <!-- <img 

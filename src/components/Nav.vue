@@ -90,69 +90,108 @@
           v-if="!userStore.authenticated && !userStore.loading"
           class="flex justify-center items-center"
         >
-          <router-link
-            to="/login"
-            class="mr-2"
-          >
-            Log In
-          </router-link>
-          <router-link to="/signup">
-            Sign Up
-          </router-link>
+          <div class="hidden w-0 sm:flex sm:w-full">
+            <router-link
+              to="/login"
+              class="mr-2"
+            >
+              Login
+            </router-link>
+            <router-link to="/signup">
+              Sign Up
+            </router-link>
+          </div>
+          <div class="relative w-full sm:hidden sm:w-0 mr-4">
+            <button
+              class="bg-transparent h-fit text-blue-900 px-2 py-2 border border-blue-800 dark:border-[#1c3ca5] rounded-full transition duration-300 ease-in-out inline-flex justify-center items-center"
+              @click.prevent="show = !show"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                />
+              </svg>
+            </button>
+            <!-- <img
+              :src="`${userStore.user.credentials.imageUrl.stringValue}`"
+              class="w-10 rounded-lg cursor-pointer z-10 relative"
+              :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
+              @click.prevent="show = !show"
+            > -->
+
+            <!-- Dropdown menu -->
+            <div
+              v-show="show"
+              class="absolute right-0 top-12 z-10 bg-white dark:bg-[#181a1b] rounded-lg shadow w-44"
+            >
+              <router-link
+                to="/login"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-800 cursor-pointer text-sm"
+              >
+                Login
+              </router-link>
+              <hr class="dark:border-[#363b3d]">
+              <router-link
+                to="/signup"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-800 cursor-pointer text-sm"
+              >
+                Sign Up
+              </router-link>
+            </div>
+            <button
+              v-show="show"
+              tabindex="-1"
+              class="fixed w-full h-full inset-0 opacity-0 cursor-default"
+              @click.prevent="show = false"
+            />
+          </div>
         </div>
         <div
           v-else-if="!userStore.loading"
-          class="w-10 relative"
+          class="flex"
         >
-          <img
-            :src="`${userStore.user.credentials.imageUrl.stringValue}`"
-            class="w-10 rounded-lg cursor-pointer z-10 relative"
-            :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
-            @click.prevent="show = !show"
-          >
+          <div class="relative mr-4">
+            <img
+              :src="`${userStore.user.credentials.imageUrl.stringValue}`"
+              class="w-10 rounded-lg cursor-pointer z-10 relative"
+              :alt="`${userStore.user.credentials.username.stringValue} profile picture`"
+              @click.prevent="show = !show"
+            >
 
-          <!-- Dropdown menu -->
-          <div
-            v-show="show"
-            class="absolute right-0 top-12 z-10 bg-white dark:bg-[#181a1b] rounded-lg shadow w-44"
-          >
-            <div class="px-4 py-3 text-sm">
-              <div>{{ userStore.user.credentials.username.stringValue }}</div>
-            </div>
-            <!-- <ul class="py-2 text-sm">
-              <li>
-                <router-link
-                  to="#"
-                  class="block px-4 py-2 hover:bg-gray-100"
+            <!-- Dropdown menu -->
+            <div
+              v-show="show"
+              class="absolute right-0 top-12 z-10 bg-white dark:bg-[#181a1b] rounded-lg shadow w-44"
+            >
+              <div class="px-4 py-3 text-sm">
+                <div>{{ userStore.user.credentials.username.stringValue }}</div>
+              </div>
+              <hr class="dark:border-[#363b3d]">
+              <div class="py-2">
+                <div
+                  class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-800 cursor-pointer"
+                  @click.prevent="logout"
                 >
-                  Dashboard
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="#"
-                  class="block px-4 py-2 hover:bg-gray-100"
-                >
-                  Settings
-                </router-link>
-              </li>
-            </ul> -->
-            <hr class="dark:border-[#363b3d]">
-            <div class="py-2">
-              <div
-                class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-zinc-800 cursor-pointer"
-                @click.prevent="logout"
-              >
-                Sign out
+                  Sign out
+                </div>
               </div>
             </div>
+            <button
+              v-show="show"
+              tabindex="-1"
+              class="fixed w-full h-full inset-0 opacity-0 cursor-default"
+              @click.prevent="show = false"
+            />
           </div>
-          <button
-            v-show="show"
-            tabindex="-1"
-            class="fixed w-full h-full inset-0 opacity-0 cursor-default"
-            @click.prevent="show = false"
-          />
         </div>
         <div v-else>
           <div class="w-10" />
