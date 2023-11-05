@@ -762,12 +762,12 @@ video {
   margin: 0.5rem;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .m-8 {
   margin: 2rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
 }
 
 .m-0 {
@@ -892,10 +892,6 @@ video {
 
 .mr-auto {
   margin-right: auto;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .mt-4 {
@@ -2554,6 +2550,14 @@ video {
     margin-right: 8rem;
   }
 
+  .md\:mr-auto {
+    margin-right: auto;
+  }
+
+  .md\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2564,6 +2568,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-32 {

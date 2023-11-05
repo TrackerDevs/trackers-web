@@ -42,7 +42,7 @@
             >
               <template
                 v-for="event in store.events"
-                :key="event.id"
+                :key="event.info.id.stringValue"
               >
                 <EventAccordion :event="event" />
               </template>

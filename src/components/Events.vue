@@ -9,7 +9,7 @@
             <p class="text-gray-800 dark:text-[#cdc8c2] font-bold text-xl lg:w-[19rem] md:w-32">
               {{ DAYS_FULL[dayName] }}, {{ MONTH_NAMES[month] }} {{ day }} {{ year }}
             </p>
-            <div class="mr-auto ml-2 relative">
+            <div class="ml-auto md:mr-auto md:ml-2 relative">
               <form>
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
@@ -37,7 +37,7 @@
                 >
               </form>
             </div>
-            <div>
+            <div class="hidden md:flex">
               <button
                 :class="`${type === 2 ? 'bg-red-50 dark:bg-[#2a0000] hover:bg-red-100 dark:hover:bg-[#450a0a] text-red-500' : 'bg-gray-100 dark:bg-[#181a1b] hover:bg-red-100 dark:hover:bg-[#2a0000] text-gray-600 dark:text-[#cdc8c2]'} font-bold rounded py-1 px-4 mx-2`"
                 @click="type = 2"
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row w-full h-full border-l dark:border-[#363b3d]">
+        <div class="flex flex-row w-full h-full border-l dark:border-[#363b3d] hidden md:flex">
           <div class="flex flex-col w-2/5 h-full border-r border-b dark:border-[#363b3d]">
             <div class="flex flex-row items-center justify-between py-2 w-[80%] mx-auto">
               <p class="text-gray-800 dark:text-[#cdc8c2] mr-auto font-bold">
@@ -216,6 +216,29 @@
             </div>
           </div>
         </div>
+        <div class="bg-gray-50 dark:bg-[#1b1d1e] block md:hidden">
+          <div
+            v-if="store.events.length !== 0"
+            class="m-8 min-h-screen"
+          >
+            <template
+              v-for="event in store.events"
+              :key="event.info.id.stringValue"
+            >
+              <EventAccordion2
+                :event="event"
+                :rsvp-func="rsvpEvent"
+              />
+            </template>
+          </div>
+          <div
+            v-else
+            class="min-h-screen"
+          >
+            <p>Loading...</p>
+          </div>
+          <Footer />
+        </div>
         <EventModal
           v-show="showModal"
           :close-func="closeModal"
@@ -234,19 +257,23 @@
 
 <script>
 import Nav from './Nav';
+import Footer from './Footer';
 import Month from "./Events/Month.vue";
 import Week from "./Events/Week.vue";
 import Day from "./Events/Day.vue";
 import EventModal from "./Events/EventModal.vue";
+import EventAccordion2 from './Events/EventAccordion2';
 import { useCalendarEventsStore } from '../stores/calendarEvents';
 export default {
   name: 'EventsComponent',
   components: {
     Nav,
+    Footer,
     Month,
     Week,
     Day,
-    EventModal
+    EventModal,
+    EventAccordion2
   },
   setup() {
     const store = useCalendarEventsStore();

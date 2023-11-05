@@ -33,6 +33,8 @@ export const useCalendarEventsStore = defineStore("calendarEvents", {
 				await axios.post(`/calendar/rsvp`, { eventId: id });
 				const res = await axios.get(`/calendar/${id}`);
 				this.event = res.data.event;
+				const res2 = await axios.get("/calendar");
+				this.events = res2.data.events;
 				uiStore.clearErrors();
 			} catch (e) {
 				uiStore.setErrors(e.response.data);
